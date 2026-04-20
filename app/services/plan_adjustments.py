@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from types import SimpleNamespace
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.enums import AdjustmentReason, Environment
@@ -41,7 +42,7 @@ def adjust_plan_exercise(
 ) -> AdjustmentResult:
     _validate_adjustment_payload(payload)
 
-    target_entry = _get_target_entry(plan, payload.session_exercise_id)
+    target_entry = _get_locked_target_entry(db, plan.id, payload.session_exercise_id)
     slot_rule = get_slot_rule(target_entry.slot_type)
     current_exercise = target_entry.exercise
     current_session = target_entry.session
@@ -120,12 +121,22 @@ def _validate_adjustment_payload(payload: CreateAdjustmentRequest) -> None:
         raise PlanAdjustmentError("temporary_discomfort_tags is required for PAIN_OR_DISCOMFORT.")
 
 
-def _get_target_entry(plan: TrainingPlan, session_exercise_id: int) -> WorkoutSessionExercise:
-    for session in plan.sessions:
-        for entry in session.exercises:
-            if entry.id == session_exercise_id:
-                return entry
-    raise PlanAdjustmentError("Session exercise not found for this plan.")
+def _get_locked_target_entry(db: Session, plan_id: int, session_exercise_id: int) -> WorkoutSessionExercise:
+    entry = (
+        db.execute(
+            select(WorkoutSessionExercise)
+            .join(WorkoutSessionExercise.session)
+            .where(
+                WorkoutSessionExercise.id == session_exercise_id,
+                WorkoutSessionExercise.session.has(plan_id=plan_id),
+            )
+            .with_for_update()
+        )
+        .scalar_one_or_none()
+    )
+    if entry is None:
+        raise PlanAdjustmentError("Session exercise not found for this plan.")
+    return entry
 
 
 def _build_effective_profile(*, profile, payload: CreateAdjustmentRequest):

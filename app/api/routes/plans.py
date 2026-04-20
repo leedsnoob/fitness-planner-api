@@ -26,7 +26,7 @@ from app.services.planner import PlanGenerationError, generate_plan
 router = APIRouter(prefix="/plans", tags=["plans"])
 
 
-def _plan_query(plan_id: int | None = None):
+def _plan_query(plan_id: int | None = None, *, for_update: bool = False):
     statement = (
         select(TrainingPlan)
         .options(
@@ -38,11 +38,16 @@ def _plan_query(plan_id: int | None = None):
     )
     if plan_id is not None:
         statement = statement.where(TrainingPlan.id == plan_id)
+    if for_update:
+        statement = statement.with_for_update()
     return statement
 
 
-def _get_owned_plan(db: Session, user_id: int, plan_id: int) -> TrainingPlan:
-    plan = db.execute(_plan_query(plan_id).where(TrainingPlan.user_id == user_id)).scalar_one_or_none()
+def _get_owned_plan(db: Session, user_id: int, plan_id: int, *, for_update: bool = False) -> TrainingPlan:
+    plan = (
+        db.execute(_plan_query(plan_id, for_update=for_update).where(TrainingPlan.user_id == user_id))
+        .scalar_one_or_none()
+    )
     if plan is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Plan not found.")
     return plan
@@ -161,7 +166,7 @@ def create_adjustment(
     db: Session = Depends(get_db_session),
     current_user: User = Depends(get_current_user),
 ) -> PlanAdjustmentResponse:
-    plan = _get_owned_plan(db, current_user.id, plan_id)
+    plan = _get_owned_plan(db, current_user.id, plan_id, for_update=True)
     try:
         result = adjust_plan_exercise(
             db=db,

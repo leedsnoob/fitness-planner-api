@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Optional
 
-from sqlalchemy import Boolean, DateTime, JSON, String, Text, UniqueConstraint
+from sqlalchemy import Boolean, DateTime, ForeignKey, JSON, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.session import Base
@@ -18,6 +18,11 @@ class Exercise(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     source_id: Mapped[Optional[str]] = mapped_column(String(64), nullable=True)
     source_name: Mapped[str] = mapped_column(String(64), default="wger", index=True)
+    owner_user_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=True,
+        index=True,
+    )
     name: Mapped[str] = mapped_column(String(255), index=True)
     description: Mapped[str] = mapped_column(Text, default="")
     primary_muscles: Mapped[list[str]] = mapped_column(JSON, default=list)

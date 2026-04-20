@@ -17,3 +17,25 @@ class Environment(str, Enum):
     HOME = "HOME"
     GYM = "GYM"
 
+
+class MovementPattern(str, Enum):
+    HORIZONTAL_PUSH = "horizontal_push"
+    VERTICAL_PUSH = "vertical_push"
+    HORIZONTAL_PULL = "horizontal_pull"
+    VERTICAL_PULL = "vertical_pull"
+    SQUAT = "squat"
+    HINGE = "hinge"
+    LUNGE = "lunge"
+    CORE = "core"
+
+
+class DifficultyLevel(str, Enum):
+    BEGINNER = "beginner"
+    INTERMEDIATE = "intermediate"
+    ADVANCED = "advanced"
+
+
+class ImpactLevel(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"

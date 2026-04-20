@@ -6,17 +6,21 @@ from sqlalchemy.orm import Session, selectinload
 
 from app.api.deps import get_current_user
 from app.db.session import get_db_session
-from app.models.plan import TrainingPlan, WorkoutSession, WorkoutSessionExercise
+from app.models.plan import PlanRevision, TrainingPlan, WorkoutSession, WorkoutSessionExercise
 from app.models.user import User
 from app.schemas.exercise import ExerciseResponse
 from app.schemas.plan import (
+    CreateAdjustmentRequest,
     GeneratePlanRequest,
+    PlanAdjustmentResponse,
+    PlanRevisionDetailResponse,
+    PlanRevisionListResponse,
+    PlanRevisionSummaryResponse,
     TrainingPlanDetailResponse,
     TrainingPlanListResponse,
-    TrainingPlanSummaryResponse,
-    WorkoutSessionExerciseResponse,
-    WorkoutSessionResponse,
 )
+from app.services.plan_adjustments import PlanAdjustmentError, adjust_plan_exercise
+from app.services.plan_views import build_plan_detail, build_plan_summary
 from app.services.planner import PlanGenerationError, generate_plan
 
 router = APIRouter(prefix="/plans", tags=["plans"])
@@ -37,57 +41,61 @@ def _plan_query(plan_id: int | None = None):
     return statement
 
 
-def _build_session_exercise_response(entry: WorkoutSessionExercise) -> WorkoutSessionExerciseResponse:
-    return WorkoutSessionExerciseResponse(
-        exercise=ExerciseResponse.model_validate(entry.exercise),
-        slot_type=entry.slot_type,
-        selection_score=entry.selection_score,
-        score_breakdown=entry.score_breakdown,
-        sets=entry.sets,
-        reps=entry.reps,
-        rest_seconds=entry.rest_seconds,
-        notes=entry.notes,
-    )
-
-
-def _build_session_response(session: WorkoutSession) -> WorkoutSessionResponse:
-    return WorkoutSessionResponse(
-        id=session.id,
-        day_index=session.day_index,
-        session_name=session.session_name,
-        focus_summary=session.focus_summary,
-        exercises=[_build_session_exercise_response(entry) for entry in session.exercises],
-    )
-
-
-def _build_plan_summary(plan: TrainingPlan) -> TrainingPlanSummaryResponse:
-    return TrainingPlanSummaryResponse(
-        id=plan.id,
-        goal=plan.goal,
-        split=plan.split,
-        training_days_per_week=plan.training_days_per_week,
-        environment=plan.environment,
-        generation_mode=plan.generation_mode,
-        status=plan.status,
-        session_count=len(plan.sessions),
-        created_at=plan.created_at,
-    )
-
-
-def _build_plan_detail(plan: TrainingPlan) -> TrainingPlanDetailResponse:
-    summary = _build_plan_summary(plan)
-    return TrainingPlanDetailResponse(
-        **summary.model_dump(),
-        request_snapshot=plan.request_snapshot,
-        sessions=[_build_session_response(session) for session in plan.sessions],
-    )
-
-
 def _get_owned_plan(db: Session, user_id: int, plan_id: int) -> TrainingPlan:
     plan = db.execute(_plan_query(plan_id).where(TrainingPlan.user_id == user_id)).scalar_one_or_none()
     if plan is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Plan not found.")
     return plan
+
+
+def _revision_query(plan_id: int, revision_number: int | None = None):
+    statement = (
+        select(PlanRevision)
+        .join(TrainingPlan, PlanRevision.plan_id == TrainingPlan.id)
+        .where(TrainingPlan.id == plan_id)
+        .options(
+            selectinload(PlanRevision.old_exercise),
+            selectinload(PlanRevision.new_exercise),
+        )
+        .order_by(PlanRevision.revision_number.asc())
+    )
+    if revision_number is not None:
+        statement = statement.where(PlanRevision.revision_number == revision_number)
+    return statement
+
+
+def _get_owned_revision(db: Session, user_id: int, plan_id: int, revision_number: int) -> PlanRevision:
+    revision = (
+        db.execute(
+            _revision_query(plan_id, revision_number).where(TrainingPlan.user_id == user_id)
+        )
+        .scalar_one_or_none()
+    )
+    if revision is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Revision not found.")
+    return revision
+
+
+def _build_revision_summary(revision: PlanRevision) -> PlanRevisionSummaryResponse:
+    return PlanRevisionSummaryResponse(
+        revision_number=revision.revision_number,
+        reason=revision.adjustment_request.reason,
+        detail_note=revision.adjustment_request.detail_note,
+        old_exercise=ExerciseResponse.model_validate(revision.old_exercise),
+        new_exercise=ExerciseResponse.model_validate(revision.new_exercise),
+        created_at=revision.created_at,
+    )
+
+
+def _build_revision_detail(revision: PlanRevision) -> PlanRevisionDetailResponse:
+    summary = _build_revision_summary(revision)
+    return PlanRevisionDetailResponse(
+        **summary.model_dump(),
+        score_breakdown=revision.score_breakdown,
+        explanation=revision.explanation,
+        before_snapshot=revision.before_snapshot,
+        after_snapshot=revision.after_snapshot,
+    )
 
 
 @router.post("/generate", response_model=TrainingPlanDetailResponse, status_code=status.HTTP_201_CREATED)
@@ -104,7 +112,7 @@ def create_plan(
         raise HTTPException(status_code=status_code, detail=detail) from exc
 
     plan = _get_owned_plan(db, current_user.id, plan.id)
-    return _build_plan_detail(plan)
+    return build_plan_detail(plan)
 
 
 @router.get("", response_model=TrainingPlanListResponse)
@@ -118,7 +126,7 @@ def list_plans(
     total = len(plans)
     items = plans[offset : offset + limit]
     return TrainingPlanListResponse(
-        items=[_build_plan_summary(plan) for plan in items],
+        items=[build_plan_summary(plan) for plan in items],
         total=total,
         limit=limit,
         offset=offset,
@@ -131,7 +139,7 @@ def get_plan(
     db: Session = Depends(get_db_session),
     current_user: User = Depends(get_current_user),
 ) -> TrainingPlanDetailResponse:
-    return _build_plan_detail(_get_owned_plan(db, current_user.id, plan_id))
+    return build_plan_detail(_get_owned_plan(db, current_user.id, plan_id))
 
 
 @router.delete("/{plan_id}", status_code=status.HTTP_204_NO_CONTENT)
@@ -144,3 +152,66 @@ def delete_plan(
     db.delete(plan)
     db.commit()
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@router.post("/{plan_id}/adjustments", response_model=PlanAdjustmentResponse)
+def create_adjustment(
+    plan_id: int,
+    payload: CreateAdjustmentRequest,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanAdjustmentResponse:
+    plan = _get_owned_plan(db, current_user.id, plan_id)
+    try:
+        result = adjust_plan_exercise(
+            db=db,
+            current_user=current_user,
+            plan=plan,
+            payload=payload,
+        )
+    except PlanAdjustmentError as exc:
+        detail = str(exc)
+        if "not found" in detail.lower():
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=detail) from exc
+        if "required" in detail.lower():
+            raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_CONTENT, detail=detail) from exc
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail=detail) from exc
+
+    updated_plan = _get_owned_plan(db, current_user.id, plan_id)
+    return PlanAdjustmentResponse(
+        revision_number=result.revision_number,
+        old_exercise=ExerciseResponse.model_validate(result.old_exercise),
+        new_exercise=ExerciseResponse.model_validate(result.new_exercise),
+        score_breakdown=result.score_breakdown,
+        explanation=result.explanation,
+        updated_plan=build_plan_detail(updated_plan),
+    )
+
+
+@router.get("/{plan_id}/revisions", response_model=PlanRevisionListResponse)
+def list_plan_revisions(
+    plan_id: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanRevisionListResponse:
+    _get_owned_plan(db, current_user.id, plan_id)
+    revisions = (
+        db.execute(_revision_query(plan_id).where(TrainingPlan.user_id == current_user.id))
+        .scalars()
+        .all()
+    )
+    return PlanRevisionListResponse(
+        items=[_build_revision_summary(revision) for revision in revisions],
+        total=len(revisions),
+    )
+
+
+@router.get("/{plan_id}/revisions/{revision_number}", response_model=PlanRevisionDetailResponse)
+def get_plan_revision(
+    plan_id: int,
+    revision_number: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanRevisionDetailResponse:
+    revision = _get_owned_revision(db, current_user.id, plan_id, revision_number)
+    return _build_revision_detail(revision)

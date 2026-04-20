@@ -8,14 +8,24 @@ from app.schemas.exercise import (
     UpdateCustomExerciseRequest,
 )
 from app.schemas.plan import GeneratePlanRequest, TrainingPlanDetailResponse, TrainingPlanListResponse
+from app.schemas.plan import (
+    CreateAdjustmentRequest,
+    PlanAdjustmentResponse,
+    PlanRevisionDetailResponse,
+    PlanRevisionListResponse,
+)
 from app.schemas.profile import ProfilePayload, UpdateProfileRequest, UserResponse
 
 __all__ = [
     "CreateCustomExerciseRequest",
+    "CreateAdjustmentRequest",
     "ExerciseListResponse",
     "ExerciseResponse",
     "GeneratePlanRequest",
     "LoginRequest",
+    "PlanAdjustmentResponse",
+    "PlanRevisionDetailResponse",
+    "PlanRevisionListResponse",
     "ProfilePayload",
     "RegisterRequest",
     "TokenResponse",

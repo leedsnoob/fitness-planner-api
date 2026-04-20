@@ -45,3 +45,12 @@ class PlanSplit(str, Enum):
     FULL_BODY = "full_body"
     UPPER_LOWER = "upper_lower"
     PUSH_PULL_LEGS = "push_pull_legs"
+
+
+class AdjustmentReason(str, Enum):
+    DISLIKE = "DISLIKE"
+    PAIN_OR_DISCOMFORT = "PAIN_OR_DISCOMFORT"
+    EQUIPMENT_UNAVAILABLE = "EQUIPMENT_UNAVAILABLE"
+    TOO_DIFFICULT = "TOO_DIFFICULT"
+    ENVIRONMENT_MISMATCH = "ENVIRONMENT_MISMATCH"
+    WANTS_VARIETY = "WANTS_VARIETY"

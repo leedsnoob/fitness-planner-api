@@ -146,6 +146,107 @@ TEMPLATES: dict[PlanSplit, tuple[SessionTemplate, ...]] = {
     ),
 }
 
+SLOT_RULES: dict[str, SlotTemplate] = {
+    "main_push": SlotTemplate(
+        "main_push",
+        ("horizontal_push", "vertical_push"),
+        ("horizontal_push", "vertical_push"),
+        ("chest", "triceps", "shoulders"),
+        "main",
+    ),
+    "secondary_push": SlotTemplate(
+        "secondary_push",
+        ("vertical_push", "horizontal_push"),
+        ("vertical_push", "horizontal_push"),
+        ("shoulders", "triceps", "chest"),
+        "secondary",
+    ),
+    "push_accessory": SlotTemplate(
+        "push_accessory",
+        ("horizontal_push", "vertical_push"),
+        ("horizontal_push", "vertical_push"),
+        ("chest", "triceps", "shoulders"),
+        "accessory",
+    ),
+    "main_pull": SlotTemplate(
+        "main_pull",
+        ("horizontal_pull", "vertical_pull"),
+        ("horizontal_pull", "vertical_pull"),
+        ("lats", "biceps", "trapezius"),
+        "main",
+    ),
+    "secondary_pull": SlotTemplate(
+        "secondary_pull",
+        ("vertical_pull", "horizontal_pull"),
+        ("vertical_pull", "horizontal_pull"),
+        ("lats", "biceps", "trapezius"),
+        "secondary",
+    ),
+    "lower_main": SlotTemplate(
+        "lower_main",
+        ("squat", "hinge", "lunge"),
+        ("squat", "hinge", "lunge"),
+        ("quads", "glutes", "hamstrings"),
+        "main",
+    ),
+    "lower_support": SlotTemplate(
+        "lower_support",
+        ("lunge", "squat", "hinge"),
+        ("lunge", "squat", "hinge"),
+        ("glutes", "quads", "hamstrings"),
+        "secondary",
+    ),
+    "hinge_support": SlotTemplate(
+        "hinge_support",
+        ("hinge", "lunge", "squat"),
+        ("hinge", "lunge", "squat"),
+        ("glutes", "hamstrings", "lower_back"),
+        "secondary",
+    ),
+    "hinge_accessory": SlotTemplate(
+        "hinge_accessory",
+        ("hinge",),
+        ("hinge",),
+        ("glutes", "hamstrings", "lower_back"),
+        "secondary",
+    ),
+    "main_squat": SlotTemplate(
+        "main_squat",
+        ("squat", "lunge"),
+        ("squat", "lunge"),
+        ("quads", "glutes", "hamstrings"),
+        "main",
+    ),
+    "main_hinge": SlotTemplate(
+        "main_hinge",
+        ("hinge", "lunge", "squat"),
+        ("hinge", "lunge", "squat"),
+        ("glutes", "hamstrings", "lower_back"),
+        "main",
+    ),
+    "leg_accessory": SlotTemplate(
+        "leg_accessory",
+        ("lunge", "squat"),
+        ("lunge", "squat"),
+        ("glutes", "quads", "hamstrings"),
+        "accessory",
+    ),
+    "main_lunge": SlotTemplate(
+        "main_lunge",
+        ("lunge", "squat"),
+        ("lunge", "squat"),
+        ("glutes", "quads", "hamstrings"),
+        "main",
+    ),
+    "core_finish": SlotTemplate(
+        "core_finish",
+        ("core",),
+        ("core",),
+        ("core", "abs", "obliques"),
+        "core",
+    ),
+}
+
 GOAL_PRESCRIPTIONS = {
     Goal.MUSCLE_GAIN: {
         "main": {"sets": 4, "reps": "8-12", "rest_seconds": 90},
@@ -263,6 +364,17 @@ def _load_candidate_scope(db: Session, user_id: int) -> list[Exercise]:
     return list(db.execute(statement).scalars().all())
 
 
+def load_candidate_scope(db: Session, user_id: int) -> list[Exercise]:
+    return _load_candidate_scope(db, user_id)
+
+
+def get_slot_rule(slot_type: str) -> SlotTemplate:
+    try:
+        return SLOT_RULES[slot_type]
+    except KeyError as exc:
+        raise PlanGenerationError(f"Unsupported slot type '{slot_type}'.") from exc
+
+
 def _select_exercise(
     *,
     candidates: list[Exercise],
@@ -319,6 +431,15 @@ def _matches_slot_constraints(*, exercise: Exercise, slot: SlotTemplate, environ
     if not _matches_training_level(exercise, profile.training_level):
         return False
     return True
+
+
+def matches_slot_constraints(*, exercise: Exercise, slot: SlotTemplate, environment: Environment, profile) -> bool:
+    return _matches_slot_constraints(
+        exercise=exercise,
+        slot=slot,
+        environment=environment,
+        profile=profile,
+    )
 
 
 def _matches_environment(exercise: Exercise, environment: Environment) -> bool:
@@ -382,3 +503,12 @@ def _score_exercise(
         "total": total,
     }
     return total, breakdown
+
+
+def score_exercise(
+    exercise: Exercise,
+    slot: SlotTemplate,
+    environment: Environment,
+    profile,
+) -> tuple[float, dict[str, float]]:
+    return _score_exercise(exercise, slot, environment, profile)

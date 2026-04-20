@@ -39,3 +39,9 @@ class ImpactLevel(str, Enum):
     LOW = "low"
     MEDIUM = "medium"
     HIGH = "high"
+
+
+class PlanSplit(str, Enum):
+    FULL_BODY = "full_body"
+    UPPER_LOWER = "upper_lower"
+    PUSH_PULL_LEGS = "push_pull_legs"

@@ -26,6 +26,11 @@ class User(Base):
         uselist=False,
         cascade="all, delete-orphan",
     )
+    training_plans = relationship(
+        "TrainingPlan",
+        back_populates="user",
+        cascade="all, delete-orphan",
+    )
 
 
 class UserProfile(Base):

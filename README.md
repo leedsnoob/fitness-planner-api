@@ -106,6 +106,8 @@ Run the current automated test suite:
 PYTHONPATH=. .venv/bin/pytest -q
 ```
 
+The test setup provisions an isolated PostgreSQL database per pytest process / worker, so local concurrent test runs do not fight over the same schema state.
+
 ## Supporting Documentation
 
 - [Dataset Evaluation](docs/dataset-evaluation.md)

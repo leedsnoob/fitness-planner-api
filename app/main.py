@@ -3,11 +3,13 @@ from fastapi import FastAPI
 from app.api.routes.auth import router as auth_router
 from app.api.routes.me import router as me_router
 from app.core.config import get_settings
+from app.db.session import get_session_factory
 
 
 def create_app() -> FastAPI:
     settings = get_settings()
     app = FastAPI(title=settings.app_name)
+    app.state.session_factory = get_session_factory()
 
     @app.get("/health")
     def health() -> dict[str, str]:

@@ -1,0 +1,3415 @@
+[
+  {
+    "source_id": "1295",
+    "source_name": "wger",
+    "name": "Barbell Bench Press - NB",
+    "description": "The bench press is a compound exercise that builds strength and muscle in the chest and triceps. When many people think of listing, the bench press is often the first exercise that comes to mind",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1877",
+    "source_name": "wger",
+    "name": "Banded Scapular Retraction",
+    "description": "Attach one end of resistance band to wall/upright/... at shoulder height. Insert arm into the loop, at the tricep. Step back until band is pulled straight. Pull back elbow and shoulder against the resistance of the band.",
+    "primary_muscles": [
+      "shoulders",
+      "trapezius"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "resistance_band"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1192",
+    "source_name": "wger",
+    "name": "Alternating Biceps Curls With Dumbbell",
+    "description": "Hold two barbells, the arms are streched, the hands are on your side, the palms face inwards. Bend one arm at a time and bring the weight with a fast movement up. At the same time, rotate your arms by 90 degrees at the very beginning of the movement. At the highest point, rotate a little the weights further outwards. Without a pause, bring the arm back down, slowly, and do the same with the other arm. Don't allow your body to swing during the exercise, all work is done by the biceps, which are the only mucles that should move (pay attention to the elbows).",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1470",
+    "source_name": "wger",
+    "name": "1-Arm Half-Kneeling Lat Pulldown",
+    "description": "Attach a D-Handle to a high pully. And use your lat muscles to pull the weight single handedly.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1948",
+    "source_name": "wger",
+    "name": "1 Leg Box Squat",
+    "description": "This exercise requires a sturdy box or a chair. Simple stand ~6 inches in front of it and balance yourself on one leg. From here, begin squatting down in a smooth controlled motion while keeping your other leg straight out in front of you for balance. Slowly sit down on the box, pause for a 1 count and push back up with the working leg, while never letting your other leg touch the ground.",
+    "primary_muscles": [
+      "hamstrings",
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "901",
+    "source_name": "wger",
+    "name": "Barbell Hip Thrust",
+    "description": "Sit on the ground with a bench behind you, bending your knees so your feet are planted on the ground and holding a barbell resting below your hips. If you have a padded bar, or anything you can slip in between the bar and your body, it will go a long way to making the exercise more comfortable.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1102",
+    "source_name": "wger",
+    "name": "Alternate back lunges",
+    "description": "The posterior muscles of the buttocks, hamstrings, soleus and gastrocnemius are trained more",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1924",
+    "source_name": "wger",
+    "name": "3008 Abdominal Crunch",
+    "description": "This is especially for the gym80 device 3008 Abdominal Crunch.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1638",
+    "source_name": "wger",
+    "name": "Barbell Clean and press",
+    "description": "This exercise involves lifting a barbell from the ground to the shoulders, then pressing it overhead. It is a compound movement that targets multiple muscle groups, including the legs, back, shoulders, and arms. It is often used in strength and conditioning programs to improve overall power and athleticism.",
+    "primary_muscles": [
+      "shoulders",
+      "chest"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1925",
+    "source_name": "wger",
+    "name": "Barbell Silverback Shrug",
+    "description": "Stand with your feet shoulder width apart holding the barbell with both hands in front just past shoulder width. Bend forward at the hips with a slight bend in your knees, keeping your back straight. Engage your shoulder blades, as if you are trying to touch them together. Release the shrug. Description taken from MuscleWiki",
+    "primary_muscles": [
+      "trapezius"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1567",
+    "source_name": "wger",
+    "name": "Alternating dumbbell hammer curl",
+    "description": "Stand with your knees slightly bent and your back straight. Hold a dumbbell in each hand, using a neutral grip at your sides.",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1545",
+    "source_name": "wger",
+    "name": "Archer Pull Up",
+    "description": "An archer pull-up is an advanced bodyweight exercise that strengthens your back and biceps, serving as a progression towards a one-arm pull-up. It gets its name from the \"bow-drawing\" position your body takes at the top.Here's how to do it:1. Grip: Grasp a pull-up bar with a wider-than-shoulder-width overhand grip.2. Starting Position: Hang with arms fully extended, engaging your core and keeping your shoulder blades pulled down.3. The Pull: Pull your body up towards one hand, similar to a regular pull-up. At the same time, extend the other arm out to the side, keeping it as straight as possible. Your chin should come towards the hand that is pulling.4. Hold & Lower: Briefly hold the top position where one arm is bent and pulling, and the other is extended. Slowly lower yourself back to the starting position with control.5. Alternate: Repeat the movement, pulling up towards the opposite hand.The key to this exercise is to keep the assisting arm as straight as possible to maximise the load on the working arm. This makes it a challenging but effective exercise for unilateral pulling strength.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "trapezius"
+    ],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1804",
+    "source_name": "wger",
+    "name": "ankle dorsiflexion rocks",
+    "description": "Move your knee forward, keeping your heel on the ground. Hold the position for a couple of seconds and return to the starting position.",
+    "primary_muscles": [
+      "calves",
+      "soleus"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "189",
+    "source_name": "wger",
+    "name": "Deficit Deadlift",
+    "description": "Preparation Stand on weight plate, bumper plate, or shallow elevated platform with loaded bar above feet. Squat down and grasp bar with shoulder width or slightly wider overhand or mixed grip. Execution Lift bar by extending hips and knees to full extension. Pull shoulders back at top of lift if rounded. Return weights to floor by bending hips back while allowing knees to bend forward, keeping back straight and knees pointed same direction as feet. Repeat. Comments Throughout lift, keep hips low, shoulders high, arms and back straight. Knees should point same direction as feet throughout movement. Keep bar close to body to improve mechanical leverage. Grip strength and strength endurance often limit ability to perform multiple reps at heavy resistances. Gym chalk, wrist straps, grip work, and mixed grip can be used to enhance grip. Mixed grip indicates one hand holding with overhand grip and other hand holding with underhand grip. Lever barbell jack can be used to lift barbell from floor for easier loading and unloading of weight plates. Barbell Deficit Deadlift emphasizes building strength through lowest portion of Deadlift. Target muscle is exercised isometrically. Heavy barbell deadlifts significantly engages Latissmus Dorsi. See Barbell Deficit Deadlift under Gluteus Maximus. Also see Deadlift Analysis.",
+    "primary_muscles": [],
+    "secondary_muscles": [
+      "hamstrings",
+      "glutes",
+      "lats",
+      "abs",
+      "soleus"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "46",
+    "source_name": "wger",
+    "name": "Barbell Lunges Standing",
+    "description": "Put barbell on the back of your shoulders. Stand upright, then take the first step forward. Step should bring you forward so that your supporting legs knee can touch the floor. Then stand back up and repeat with the other leg. Remember to keep good posture.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1573",
+    "source_name": "wger",
+    "name": "Ab wheel",
+    "description": "Starting Position : Kneel on the floor with the ab wheel in front of you. Grip the Wheel : Hold the handles firmly. Roll Out : Slowly roll the wheel forward, extending your body while keeping your core tight. Return : Pull the wheel back towards your knees, maintaining tension in your core.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis",
+      "serratus_anterior"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1320",
+    "source_name": "wger",
+    "name": "Bench Dips On Floor HD",
+    "description": "Triceps dips on floor are a compound exercise as they worked multiple muscle groups simultaneously. Although this bodyweight exercise mainly targets the triceps, it also hits your chest and front of your shoulder. Triceps dips on floor are one of the most effective exercises to increase arm strength and also build lean muscle in your upper arms. Triceps dips on floor are a closed kinetic chain exercise and express that you do the movements around a fixed point. It increases compression force on your joints thereby improving stability.",
+    "primary_muscles": [
+      "biceps",
+      "brachialis",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "chest",
+      "soleus",
+      "trapezius"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "51",
+    "source_name": "wger",
+    "name": "Barbell Wrist Curl",
+    "description": "Sitting on a bench, grab a barbell with your palms facing up and your hands shoulder-width apart. Rest your forearms on your thighs and allow your wrists to hang over your knees. Perform the movement by curling your palms and wrists towards your face. Pause for a moment in the top position, then slowly return the barbell to the starting position.",
+    "primary_muscles": [
+      "shoulders",
+      "hamstrings"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "barbell",
+      "bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1501",
+    "source_name": "wger",
+    "name": "Alternative DB Gorilla rows",
+    "description": "Slightly bent down and knees to mimic a gorilla position and pull/row up the DBs to the chest. DB stay straight (thumbs pointing up)",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1635",
+    "source_name": "wger",
+    "name": "Modified pulldown",
+    "description": "With an inclined bench in front of the pulldown machine, use a close-grip to do latfocused pulldowns.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "incline_bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1141",
+    "source_name": "wger",
+    "name": "Arabesque",
+    "description": "Take all your weight onto one leg and you're going to maintain that position, keeping your hips and pelvis level the whole time. With your back in a neutral position you want to tilt yourself forward kicking your leg back up and then slowly with your glutes bring yourself back up to neutral.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1503",
+    "source_name": "wger",
+    "name": "Dumbbell Frog Press",
+    "description": "Similar to hip thrust, but with feet put up together, lifting the butt off the ground in a frog like position.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort",
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1830",
+    "source_name": "wger",
+    "name": "Barbell Step Back Lunge",
+    "description": "Step 1: Stand with your feet hip-width apart, holding a barbell on your upper back. Step 2: Keep your back straight, chest up, and core engaged. Step 3: Take a step back with one leg and lower your body by bending both knees. Ensure that your back knee nearly touches the ground. Step 4: Push off your back foot to return to the starting position. Step 5: Repeat the movement with the other leg. Continue alternating between legs for the desired repetitions.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1933",
+    "source_name": "wger",
+    "name": "Abdominal Crunch",
+    "description": "The Abdominal Crunch is a classic core isolation exercise performed on the floor or a mat. Unlike a full sit-up, it involves a smaller range of motion where you only lift your shoulders and upper back off the ground, keeping your lower back pressed firmly against the floor.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis",
+      "serratus_anterior"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "gym_mat"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "139",
+    "source_name": "wger",
+    "name": "Butterfly Reverse",
+    "description": "",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "79",
+    "source_name": "wger",
+    "name": "Bent High Pulls",
+    "description": "Bend over slightly while holding two dumbbells. Pull the dumbbells up to your chest, keeping your elbows as high as you can.",
+    "primary_muscles": [
+      "trapezius"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1294",
+    "source_name": "wger",
+    "name": "Arco femorale una gamba",
+    "description": "Nello specifico i muscoli coinvolti sono: bicipite femorale. muscolo semimembranoso. muscolo semitendinoso.",
+    "primary_muscles": [
+      "glutes",
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1510",
+    "source_name": "wger",
+    "name": "Neutral Grip Lat Pulldown",
+    "description": "Lat pull downs with a neutral grip on the bar.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1687",
+    "source_name": "wger",
+    "name": "Bear crawl pull through",
+    "description": "Place a dumbbell at around hip level and assume a bear crawl position. Push the knees off the floor and hold. With the opposite hand reach for the dumbbell and pull it to the other side. Place your hand back on the floor and repeat with your other hand.",
+    "primary_muscles": [
+      "shoulders",
+      "glutes",
+      "quads",
+      "abs"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "calves",
+      "trapezius"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1614",
+    "source_name": "wger",
+    "name": "Dumbbell Hip Thrust",
+    "description": "Dumbbell hip thrust Begin seated on the ground with a bench placed horizontally behind you and your knees bent. Lay a dumbbell across your hips, holding either end with both hands. You may wish to place a pad or towel on your hips to increase comfort. With knees bent and feet firmly planted on the floor, lean back onto the bench so that it is gently pressing into your upper back. This is your starting position. Inhale. Exhale. Holding onto the dumbbell, press your heels into the mat and raise your hips off the floor until your body forms one straight line from chin to knee, resting your shoulders on the bench and ensuring that your head is an extension of your spine. Inhale. Lower your hips to return to the starting position but without resting your glutes on the mat. Repeat for the specified number of repetitions.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1324",
+    "source_name": "wger",
+    "name": "Bodyweight lunge HD",
+    "description": "Bodyweight lunges are an effective calisthenic exercise for strengthening the lower body, improving balance and stability, and developing functional strength. They are a popular choice for bodyweight workouts, home workouts, and can also be included as part of a larger strength training routine.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "soleus"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1828",
+    "source_name": "wger",
+    "name": "Abdominal Draw-In",
+    "description": "Lie on your back with knees bent. Gently pull your belly button toward your spine without moving your hips or holding your breath.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1908",
+    "source_name": "wger",
+    "name": "Butterfly Superman",
+    "description": "Lie on stomach, intertwine fingers behind the head and start raising your head and raise elbows as far as they go.",
+    "primary_muscles": [
+      "trapezius"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "915",
+    "source_name": "wger",
+    "name": "BUS DRIVERS",
+    "description": "Sitting with a Weight Plate, used as wheel, in both hands; raised slightly below eye level",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1606",
+    "source_name": "wger",
+    "name": "Arm Raises (T/Y/I)",
+    "description": "Stand upright with feet hip-width apart, core engaged, and arms relaxed at your sides. From this position, perform three different arm raises to target the shoulders and upper back: T Raise: Lift your arms straight out to the sides until they are parallel to the floor, forming a \u201cT\u201d shape. Y Raise: Lift your arms upward at about a 45\u00b0 angle from your body to form a \u201cY\u201d shape. I Raise: Raise your arms straight overhead, close together, forming an \u201cI\u201d shape. Maintain a neutral spine, avoid arching your lower back, and move slowly with control. Focus on squeezing your shoulder blades together and keeping your shoulders down away from your ears.",
+    "primary_muscles": [
+      "shoulders",
+      "lats",
+      "serratus_anterior",
+      "trapezius"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "475",
+    "source_name": "wger",
+    "name": "Pull-ups",
+    "description": "Grab the pull up bar with a wide grip, the body is hanging freely. Keep your chest out and pull yourself up till your chin reaches the bar or it touches your neck, if you want to pull behind you. Go with a slow and controlled movement down, always keeping the chest out.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps",
+      "trapezius"
+    ],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "pull_up_bar"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1630",
+    "source_name": "wger",
+    "name": "Blaze",
+    "description": "BLAZE is a full-body HIIT workout. Designed to supercharge your cardio fitness and strength. Delivered in its own purpose-built studio, BLAZE is a unique mix of martial arts, intense cardio and strength training.",
+    "primary_muscles": [
+      "shoulders",
+      "glutes",
+      "chest",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "hamstrings",
+      "lats",
+      "abs"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bench",
+      "dumbbell",
+      "kettlebell",
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1652",
+    "source_name": "wger",
+    "name": "Dumbbell Romanian Deadlift",
+    "description": "This exercise involves holding a dumbbell in each hand and bending forward at the hips while keeping the back straight, then returning to a standing position. It primarily targets the hamstrings and glutes.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1706",
+    "source_name": "wger",
+    "name": "Bulgarian Squat with Dumbbells",
+    "description": "The Bulgarian split squat consists of performing a squat on one leg with the rear foot resting on a raised platform. Elevating your back leg on a bench creates instability and increases the range of motion of the exercise.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "56",
+    "source_name": "wger",
+    "name": "Abdominal Stabilization",
+    "description": "",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "gym_mat"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "129",
+    "source_name": "wger",
+    "name": "Chest Press",
+    "description": "",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1825",
+    "source_name": "wger",
+    "name": "Chest-Supported Rear Delt Raise",
+    "description": "\"The Y\"Position: Set an incline bench to 30-45 degrees. Lie face-down with your chest supported, keeping your head neutral or looking slightly down to avoid neck strain.Grip: Hold light dumbbells with a neutral or thumbs-up grip (thumb pointing to the ceiling).Movement: With straight or slightly bent elbows, raise the dumbbells up and out in a \"Y\" shape. Focus on moving the shoulders and shoulder blades rather than just lifting the arms.Top Position: Squeeze the shoulder blades together and reach high, ensuring the arms are angled to form a \"Y\".Control: Lower the dumbbells slowly to the starting position.",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "trapezius"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "bench",
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1929",
+    "source_name": "wger",
+    "name": "Assisted Pull-Up",
+    "description": "The Assisted Pull-Up is a compound vertical pulling exercise performed on a machine with a counterweight platform or by using resistance bands. It mimics the mechanics of a standard pull-up but reduces the total weight you have to lift, making it an excellent tool for building functional strength and perfecting your technique.",
+    "primary_muscles": [
+      "lats",
+      "trapezius"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps",
+      "abs",
+      "serratus_anterior"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "resistance_band"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "576",
+    "source_name": "wger",
+    "name": "Side Crunch",
+    "description": "Hold weight in one hand. Bend side ways to the knee. Pull upo to upright position using your obliquus.",
+    "primary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "secondary_muscles": [
+      "abs"
+    ],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "gym_mat"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "977",
+    "source_name": "wger",
+    "name": "Box squat",
+    "description": "Set up the box: Position the box behind you, about 3 feet from a squat rack if you're using a barbell. Choose a height that allows you to squat down and gently tap your glutes on the box with your back straight. Stand with proper form: Stand with your feet shoulder-width apart, toes pointed slightly outward. Engage your core and keep your back neutral. If using a barbell, rack it at shoulder height. Lower down: Sit back as if going to sit on a chair, bending your knees and lowering your hips towards the box. Keep your core tight and back straight throughout the movement. Controlled descent: Descend in a controlled manner until your glutes gently touch the box. Don't plop down. Pause and press up: Briefly pause at the bottom with your back straight and core engaged. Then, press through your heels to drive yourself back up to the starting position. Improvements in coordination, balance and endurance, toning of the leg and buttock muscles and an overall increase in bone density eliminating the risk of osteoporosis.",
+    "primary_muscles": [
+      "glutes",
+      "quads",
+      "soleus"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1234",
+    "source_name": "wger",
+    "name": "Dumbbell Single-leg Hip Thrust",
+    "description": "The single-leg hip thrust is performed by placing your upper back on a weight bench, raising one leg, and extending the hip of the other leg to achieve an isolated contraction of the glute. By working each side separately, you can fully isolate your glutes unilaterally, providing maximal training stimulus.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "quads"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "205",
+    "source_name": "wger",
+    "name": "Dumbbell Lunges Standing",
+    "description": ".",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "41",
+    "source_name": "wger",
+    "name": "Barbell Ab Rollout",
+    "description": "Place a barbell on the floor at your feet. Bending at the waist, grip the barbell with a shoulder with overhand grip. With a slow controlled motion, roll the bar out so that your back is straight. Roll back up raising your hips and butt as you return to the starting position.",
+    "primary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1554",
+    "source_name": "wger",
+    "name": "Clap Push-UP",
+    "description": "The clap push-up is an explosive upper body movement that builds power and fast-twitch muscle strength. It adds a plyometric challenge to the traditional push-up by requiring the hands to leave the ground mid-rep. Start in a strong push-up position with your hands slightly wider than shoulder-width and core engaged Lower your body explosively and push off the ground with enough force to lift your hands. Quickly clap your hands together at chest level before returning them to the floor. Land with soft elbows to absorb the impact and immediately move into the next rep",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "abs",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1223",
+    "source_name": "wger",
+    "name": "Claps over the head",
+    "description": "Stand with your feet shoulder width apart. Raise your arms and clap over your head",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1219",
+    "source_name": "wger",
+    "name": "Australian pull-ups",
+    "description": "Lie down under a high bar or suspension bar, positioned at an appropriate height. Position yourself on your back under the bar, gripping the bar with a supinated grip (palms facing you). Adjust your position so that your body is aligned straight from head to toe. Arms should be fully extended, shoulders stabilized, and legs aligned with the rest of the body. Bend your elbows and pull your chest towards the bar, contracting your back muscles. Imagine you're trying to bring your shoulder blades together. Hold the contraction at the top of the movement for a moment to maximize muscle activation. Slowly return to the starting position, extending your elbows.",
+    "primary_muscles": [
+      "shoulders",
+      "biceps",
+      "lats"
+    ],
+    "secondary_muscles": [
+      "trapezius"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "959",
+    "source_name": "wger",
+    "name": "TRX Rows",
+    "description": "This exercise serves as a lead-up to Pull Ups.",
+    "primary_muscles": [
+      "shoulders",
+      "biceps",
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "124",
+    "source_name": "wger",
+    "name": "Braced Squat",
+    "description": "Stand with feet slightly wider than shoulder-width apart, while standing as tall as you can. Grab a weight plate and hold it out in front of your body with arms straight out. Keep your core tight and stand with a natural arch in your back. Now, push hips back and bend knees down into a squat as far as you can. Hold for a few moments and bring yourself back up to the starting position.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "265",
+    "source_name": "wger",
+    "name": "Glute Bridge",
+    "description": "Lie on you back with your hips and knees flexed, feet on the ground. From this position, raise your butt off of the ground to a height where your body makes a straight line from your knees to your shoulders. To make the exercise more intense, you can add weight by letting a barbell rest on your hips as you complete the motion, or you can put your feet on a slightly higher surface such as a step or a bench.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "206",
+    "source_name": "wger",
+    "name": "Dumbbell Lunges Walking",
+    "description": "Take two dumbbells in your hands, stand straight, feet about shoulder wide. Take one long step so that the front knee is approximately forming a right angle. The back leg is streched, the knee is low but doesn't touch the ground. \"Complete\" the step by standing up and repeat the movement with the other leg.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "57",
+    "source_name": "wger",
+    "name": "Bear Walk 2",
+    "description": "-Rest your weight on your palms and the balls of your feet, not dissimilar to normal pushup position -Move by stepping with your R palm and L foot, then your L palm and R foot. Basically, walk like a lumbering bear. -Move as fast as you can. Measure your reps/sets in either distance (i.e. 40 yards) or time (i.e. 45 seconds) -Works your Pecs, Deltoids, Triceps, Traps, Lats, Abs and Lower Back, Hip Flexors, Quads, Glutes and Calves",
+    "primary_muscles": [
+      "shoulders",
+      "calves",
+      "chest",
+      "abs",
+      "serratus_anterior",
+      "soleus",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "lats",
+      "obliquus_externus_abdominis",
+      "quads",
+      "trapezius"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1897",
+    "source_name": "wger",
+    "name": "Close-Grip Bench Press",
+    "description": "Setup: Lie flat on the bench and grip the bar at shoulder-width (closer than a standard bench press). Descent: Lower the bar with control to your lower chest. Form: Keep your elbows tucked in tight against your torso\u2014do not let them flare out. Ascent: Press the bar straight back up, squeezing your triceps at the top.",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "chest"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1901",
+    "source_name": "wger",
+    "name": "Clean and Press",
+    "description": "The First Pull: Lift the bar from the floor to knee-height by driving with the legs, keeping the angle of your back constant. The \"Power\" Position: As the bar reaches mid-thigh, explosively shrug and extend your hips to create vertical momentum. The Quick Elbow Turnover: In the catch phase, rotate your elbows rapidly under the bar to create a \"shelf\" on your front deltoids. The Vertical Press: Press the bar in a straight line; your head should shift slightly forward once the bar clears your forehead to reach full lockout.",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "quads"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1143",
+    "source_name": "wger",
+    "name": "Back extensi\u00f3n",
+    "description": "Espalda en maquina de extensi\u00f3n con peso",
+    "primary_muscles": [
+      "lats",
+      "serratus_anterior"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1880",
+    "source_name": "wger",
+    "name": "Wide Grip Pull Up",
+    "description": "Using a pronated grip, grasp the pull bar with a wider than shoulder width grip. Take a deep breath, squeeze your glutes and brace your abs. Depress the shoulder blades and then drive the elbows straight down to the floor while activating the lats. Pull your chin towards the bar until the lats are fully contracted, then slowly lower yourself back to the start position and repeat for the assigned number of repetitions.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps",
+      "trapezius"
+    ],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1854",
+    "source_name": "wger",
+    "name": "Calves foam roller",
+    "description": "Move your calves slowly over the foam roller",
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1686",
+    "source_name": "wger",
+    "name": "Glute Bridge Single-Arm Press",
+    "description": "With one dumbbell in hand, perform a glute bridge. Now hold the dumbbell above your chest, this is the rep starting position. Lower the dumbbell so that your elbow touches the floor or is roughly 45 degrees below your shoulder if using a bench. Push the dumbbell back into the starting position.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps",
+      "hamstrings",
+      "glutes",
+      "triceps"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort",
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1651",
+    "source_name": "wger",
+    "name": "Dumbbell Rear Lunge",
+    "description": "This exercise involves holding a dumbbell in each hand and stepping back into a lunge position, then returning to standing. It primarily targets the glutes, hamstrings, and quadriceps.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "soleus"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "958",
+    "source_name": "wger",
+    "name": "Biceps with TRX",
+    "description": "Grab the handles of the TRX straps, lean your body back, arms and legs extended, with your body positioned in a single straight line. (This is an arm exercise, not an abdominal one.)",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1499",
+    "source_name": "wger",
+    "name": "DB Skull Crushers",
+    "description": "Alike tricpes extensions, DBs fall down near the head and pushed back up. Unlike for the triceps extension tring to extend the arms as far back",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1504",
+    "source_name": "wger",
+    "name": "Dumbbell Bradford press",
+    "description": "From a front hold of the DBs in a OHP, press above the head, bring back towards the rear of the shoulders, down, and press back forward.",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1525",
+    "source_name": "wger",
+    "name": "Ball Slams",
+    "description": "Stand with your feet about shoulder-width apart, your knees and hips slightly bent, holding the ball in both hands at chest height. Engage your core, and keep a good posture. Extend your knees and drive your hips forward while simultaneously lifting the ball. Aim for being as tall as possible, the ball overhead, arms up, hips slightly forward, and on your toes from the force of your drive. Use your core and arms to slam the medicine ball straight down between your feet with as much force as possible. Press your hips back and bend your knees to further power the slam. Exhale as you slam the ball down. Squat down to pick up the ball from the floor, then immediately move into the next slam by repeating the movement. Repeat for reps or time.",
+    "primary_muscles": [
+      "lats",
+      "obliquus_externus_abdominis",
+      "abs"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "glutes"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1542",
+    "source_name": "wger",
+    "name": "Wide Pull Up",
+    "description": "The grip width for a wide grip pull-up is typically wider than shoulder-width apart, which means your hands will be positioned farther apart than they would be for a standard pull-up. This wider grip targets the latissimus dorsi muscles more effectively, making it an excellent exercise for building upper body strength, particularly in the back muscles.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [
+      "pull_up_bar"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1911",
+    "source_name": "wger",
+    "name": "Cat Plank",
+    "description": "On your fours and raise the knees of the floor ever so slightly. Curl your back out and push back from your shoulders as to resemble a cat making itself look large.",
+    "primary_muscles": [
+      "quads",
+      "abs"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1392",
+    "source_name": "wger",
+    "name": "Good Morning",
+    "description": "Stand with your feet more than shoulder-width apart (wider stance) and place your hands on your hips. Hinge at your hips and lower your upper body towards the ground while keeping your back straight then come back up.",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1445",
+    "source_name": "wger",
+    "name": "Jerk OL",
+    "description": "Olympic lift jerk Hold bar in front on shoulders like push press Bend and extend knees pushing bar up while diving under the bar Catch bar overhead with straight arms using lunge Move feet parallel while holding bar in lockout",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "glutes",
+      "quads",
+      "triceps"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1412",
+    "source_name": "wger",
+    "name": "bicycle crunches",
+    "description": "Bicycle crunches are a core exercise performed on the floor. Lie on your back with your hands behind your head and legs extended. Lift your shoulders off the ground, bring one knee toward your chest, and twist your torso so your opposite elbow meets the knee. Alternate sides in a pedaling motion, ensuring controlled movements and engaging your core throughout the exercise.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1500",
+    "source_name": "wger",
+    "name": "DB UCV",
+    "description": "Dumbbell upper chest variance. Curl like movement up above at head level, activating chest and front delts",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1602",
+    "source_name": "wger",
+    "name": "Dumbbell Scaption",
+    "description": "Starting position: Stand upright with your feet shoulder-width apart. Hold a dumbbell in each hand with a neutral grip (palms facing each other). Keep a slight bend in your elbows, shoulders relaxed and shoulder blades pulled back. Execution: Slowly raise the dumbbells forward and slightly to the side, at about a 30\u201345\u00b0 angle from your body (between a front raise and a lateral raise). Lift until your arms are about shoulder height (do not go overhead). Pause for a second at the top and feel the activation in your shoulders and scapular stabilizers. Lower the dumbbells back down under control to the starting position. Breathing: Inhale as you lower the dumbbells. Exhale as you lift them. Common mistakes: Using dumbbells that are too heavy (causing jerky movements). Lifting above shoulder height (puts unnecessary stress on the shoulder joint). Arching the lower back instead of keeping the movement controlled at the shoulders. Purpose of the exercise: Activates the lower trapezius, serratus anterior, and scapular stabilizers. Helps correct posture and improve shoulder balance.",
+    "primary_muscles": [
+      "trapezius"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1801",
+    "source_name": "wger",
+    "name": "Barbell Full Squat",
+    "description": "The barbell full squat is a compound exercise that targets multiple muscle groups in the lower body, including the quadriceps, hamstrings, and glutes. Proper form is crucial for maximizing results and preventing injuries during the barbell full squat. This includes maintaining a shoulder-width stance, creating whole body tension, controlling your descent, and maintaining proper depth and knee positioning. Assistance moves such as the front squat, goblet squat, split squat, and Bulgarian split squat can help improve your performance in the barbell full squat by targeting specific muscle groups and improving overall technique. To achieve new personal records in your back squat, gradually increase weight over time, vary rep ranges and sets to stimulate muscle growth, and prioritize rest and recovery between training sessions.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "calves",
+      "abs"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "723",
+    "source_name": "wger",
+    "name": "Wide-grip Pulldown",
+    "description": "Lat pulldowns with a wide grip on the bar.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "brachialis",
+      "serratus_anterior",
+      "trapezius"
+    ],
+    "movement_pattern": "vertical_pull",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1438",
+    "source_name": "wger",
+    "name": "Clean",
+    "description": "Regular olympic lift clean. Pull bar from ground, catch on shoulders performing a front squat.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "lats",
+      "abs"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "268",
+    "source_name": "wger",
+    "name": "Good Mornings",
+    "description": "",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1734",
+    "source_name": "wger",
+    "name": "Single-Leg Lunge with Kettlebell:",
+    "description": "How to do a single-leg kettlebell lunge Preparation: Stand with your feet together. Hold the kettlebell with both hands by the handle, keeping it close to your chest, or hold it with one hand (on the same side as the working leg). Step and Lower: Take a large step forward (or backward, which is safer for your knees) with one leg, lowering your hips until both knees form a 90-degree angle. Focus: Shift your weight onto your front (or bent) leg, keeping your back straight and your torso upright. Return: Push off with your front leg to return to the starting position.",
+    "primary_muscles": [
+      "calves",
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1572",
+    "source_name": "wger",
+    "name": "Bird Dog",
+    "description": "The Bird Dog is a core stability exercise that enhances balance, coordination, and spinal alignment. It\u2019s a low-impact movement ideal for strengthening the posterior chain and improving overall functional control. Begin on all fours with hands under shoulders and knees under hips, keeping your spine neutral. Extend your right arm forward and left leg backward simultaneously, keeping hips square. Pause briefly at full extension while engaging your core and glutes. Return to the starting position and repeat on the opposite side",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "glutes"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1497",
+    "source_name": "wger",
+    "name": "DB Underhand bench press",
+    "description": "Underhand grip DB, perform a normal bench press movement, keeping the elbows close to the chest",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bench",
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1707",
+    "source_name": "wger",
+    "name": "Elevaci\u00f3n lateral polea",
+    "description": "Lateral elevation unilateral using a polea",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "incline_bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1700",
+    "source_name": "wger",
+    "name": "Barbell Romanian Deadlift (RDL)",
+    "description": "Execution Hinge at the hips: Push your hips backward , keeping a slight bend in the knees (soft knees). Lower the barbell along the front of your thighs/shins while maintaining a neutral spine . Keep the bar close to your body .",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1446",
+    "source_name": "wger",
+    "name": "Clean and Jerk OL",
+    "description": "Olympic lift clean and jerk. Combination of clean and jerk in one motion.",
+    "primary_muscles": [
+      "shoulders",
+      "hamstrings",
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "lats",
+      "abs",
+      "trapezius",
+      "triceps"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "294",
+    "source_name": "wger",
+    "name": "Hip Thrust",
+    "description": "The bar should go directly on your upper thigh, directly below your crotch. Your feet should be directly under your knees. Push your hips up so that you form a straight line from your knees to your shoulders. Use a pad for comfort.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "barbell",
+      "bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1604",
+    "source_name": "wger",
+    "name": "Sliding Lateral Lunge",
+    "description": "Stand upright with your feet hip-width apart, holding a kettlebell close to your chest in goblet position. Place one foot on a slider, gliding disc, or towel. Keep your chest tall and core engaged. Slowly slide the foot outward to the side while bending the opposite knee, lowering your hips into a lateral lunge. Keep the working leg\u2019s knee aligned with the toes and avoid letting it collapse inward. The non-working leg remains straight and slides smoothly along the floor. Push through the heel of the bent leg to return to the starting position while maintaining control of the kettlebell.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "calves",
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1475",
+    "source_name": "wger",
+    "name": "Black Widow Knee Slides",
+    "description": "In this bottom-up rotation exercise movement, you\u2019ll cross your knee over and drive it into that opposite elbow. Start in high plank position (or tabletop position) with hands directly beneath your shoulders. Lift the left knee toward the right arm and slide it up the forearm to get more of that posterior pelvic tilt and engagement of the abdominal muscles. Then do the opposite side, bringing your right knee toward your left hand.",
+    "primary_muscles": [
+      "obliquus_externus_abdominis",
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1496",
+    "source_name": "wger",
+    "name": "DB Upper Chest Variation",
+    "description": "Dumbbell in hand in a curl fashion, lean body into the arm to help the dumbbell up above the chest, next to the head, to activate chest and delt combo",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1590",
+    "source_name": "wger",
+    "name": "Estiramiento de brazos y cuello",
+    "description": "Alivia tensiones en la parte superior del cuerpo, especialmente \u00fatil para personas con trabajo de oficina o posturas prolongadas.",
+    "primary_muscles": [
+      "shoulders",
+      "trapezius",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "lats",
+      "serratus_anterior"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1698",
+    "source_name": "wger",
+    "name": "Barbell Row (Overhand)",
+    "description": "Execution Starting position: Hold the barbell with arms fully extended toward the floor. Maintain tension in your lats and back muscles.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1912",
+    "source_name": "wger",
+    "name": "Core Rotation",
+    "description": "Sit back, raise feet above the ground with knees bent and start rotating left and right with hands touching the ground every move.",
+    "primary_muscles": [
+      "quads",
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis",
+      "serratus_anterior"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1641",
+    "source_name": "wger",
+    "name": "Kettlebell One Legged Deadlift",
+    "description": "This exercise involves holding a kettlebell in one hand and standing on one leg while bending forward to touch the kettlebell to the ground. It targets the hamstrings, glutes, and lower back while also improving balance and stability.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell",
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1593",
+    "source_name": "wger",
+    "name": "Smith Machine Split Squat",
+    "description": "The \"Smith Machine Split Squat\" is a strength exercise performed on the Smith machine, ideal for targeting the legs and glutes. It involves placing one foot forward and the other back, lowering the body until the front thigh is parallel to the ground while the bar slides vertically along the machine. This exercise helps improve stability, correct muscle imbalances, and reduces stress on the back, providing a safe environment for strength training.",
+    "primary_muscles": [
+      "hamstrings",
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1476",
+    "source_name": "wger",
+    "name": "Butterfly Sit Up",
+    "description": "In this midrange exercise your arm muscles provide you with a little bit of momentum to help to get you off the ground. You also open them up in overhead position which engages the upper back. Start lying with feet flat on the ground, knees at an angle, arms crossed in towards your chest. Using your ab muscles, bring your upper body off the ground as you open your arms into goal post position, then slowly lower yourself back down to return to starting position.",
+    "primary_muscles": [
+      "obliquus_externus_abdominis",
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "185",
+    "source_name": "wger",
+    "name": "Decline Bench Press Barbell",
+    "description": "Lay down on a decline bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor. Concentrate, breath deeply and grab the bar more than shoulder wide. Bring it slowly down till it briefly touches your chest at the height of your nipples. Push the bar up.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "827",
+    "source_name": "wger",
+    "name": "Front Plate Raise",
+    "description": "The plate front raise is a variation of the dumbbell front raise where the lifter holds a weight plate between two hands, rather than using a dumbbell, barbell, or other weight. It can provide variety in a shoulder-focused muscle-building workout, or as part of an upper body or full-body circuit. While standing straight, hold a barbell plate in both hands at the 3 and 9 o'clock positions. Your palms should be facing each other and your arms should be extended and locked with a slight bend at the elbows and the plate should be down near your waist in front of you as far as you can go. Tip : The arms will remain in this position throughout the exercise. This will be your starting position. Slowly raise the plate as you exhale until it is a little above shoulder level. Hold the contraction for a second. As you inhale, slowly lower the plate back down to the starting position. Repeat for the recommended amount of repetitions.",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1699",
+    "source_name": "wger",
+    "name": "Barbell Row (Underhand)",
+    "description": "Execution Starting position: Hold the barbell with arms fully extended toward the floor. Maintain tension in your lats and back muscles.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1395",
+    "source_name": "wger",
+    "name": "Crossbody Leg Swings",
+    "description": "Hold onto a wall or something near you for support. Swing one leg across the front of your body, then back and out to the side. Repeat while slowly increasing your range of motion.",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1612",
+    "source_name": "wger",
+    "name": "kettlebell sumo deadlift",
+    "description": "Place your feet wider than shoulder-width apart, pointing your toes outward. Keep your back straight, shoulders back, and chest up. The knees must follow the same direction as the toes and not move forward. When going up, it is advisable to contract your glutes to maximize the effectiveness of the exercise.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1907",
+    "source_name": "wger",
+    "name": "Unilateral Lunges",
+    "description": "No stops during movement, hands on the hips.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1203",
+    "source_name": "wger",
+    "name": "Calf raises, left leg",
+    "description": "Stand on the floor or on the edge of a step to increase the range of movement. Raise one foot. Lift your heel until you're standing on your toes. (variable) Stay in this position for three seconds Slowly lower your foot until you almost touch the ground with your heel - don't slam your foot!",
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "188",
+    "source_name": "wger",
+    "name": "Decline Pushups",
+    "description": "With your feet raised approximately 30cm on a platform, align your shoulders, elbows and hands, then perform regular pushups. This emphasises the clavicular fibers of the pectoralis major.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "256",
+    "source_name": "wger",
+    "name": "Front Raises",
+    "description": "To execute the exercise, the lifter stands with their feet shoulder width apart and weights or resistance handles held by their side with a pronated (overhand) grip. The movement is to bring the arms up in front of the body to eye level and with only a slight bend in the elbow. This isolates the anterior deltoid muscle (front of the shoulder) and uses the anterior deltoid to lift the weight. When lifting it is important to keep the body still so the anterior deltoid is fully utilised; if the weight cannot be lifted by standing still then it is too heavy and a lower weight is needed. It is important to keep a slight bend in the elbow when lifting as keeping the elbow locked will add stress to the elbow joint and could cause injury. A neutral grip, similar to that used in the hammer curl, can also be used. With this variation the weight is again raised to eye level, but out to a 45 degree angle from the front of the body. This may be beneficial for those with shoulder injuries, particularly those related to the rotator cuff.",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "barbell",
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "50",
+    "source_name": "wger",
+    "name": "Barbell Triceps Extension",
+    "description": "Position barbell overhead with narrow overhand grip. Lower forearm behind upper arm with elbows remaining overhead. Extend forearm overhead. Lower and repeat.",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "chest"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1360",
+    "source_name": "wger",
+    "name": "Double Kettlebell Clean and Press",
+    "description": "Full-body muscles building exercise. This exercise provides a huge range of benefits in terms of strength & size and is extremely functional.",
+    "primary_muscles": [
+      "shoulders",
+      "biceps",
+      "brachialis",
+      "quads",
+      "trapezius",
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "glutes",
+      "lats",
+      "abs"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort",
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "960",
+    "source_name": "wger",
+    "name": "Kettlebell Swing",
+    "description": "While kettlebell swings are a full-body workout, they mostly target the muscles along the posterior chain (back of the body). The main muscles used are the glutes, hamstrings, spinal erectors, and muscles of the upper back.",
+    "primary_muscles": [
+      "shoulders",
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "quads",
+      "abs",
+      "trapezius"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1903",
+    "source_name": "wger",
+    "name": "Walking Lunges",
+    "description": "Starting Position: Stand with feet hip-width apart and hands either on your hips or holding dumbbells at your sides. The Stride: Take a wide step forward with your right leg. The Descent: Lower your hips until both knees are bent at approximately 90-degree angles . The Transition: Drive through your front heel to stand up, bringing your back foot forward to step directly into the next lunge.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "lunge",
+    "equipment_tags": [
+      "resistance_band"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "702",
+    "source_name": "wger",
+    "name": "Calf raises, one legged",
+    "description": "",
+    "primary_muscles": [
+      "calves"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1777",
+    "source_name": "wger",
+    "name": "Deficit Push ups",
+    "description": "Pushup on blocks or grips, so you can dip lower than the hands in the decent.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "254",
+    "source_name": "wger",
+    "name": "Front Raises with Plates",
+    "description": "",
+    "primary_muscles": [
+      "shoulders",
+      "trapezius"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "73",
+    "source_name": "wger",
+    "name": "Bench Press",
+    "description": "Lay down on a bench, the bar should be directly above your eyes, the knees are somewhat angled and the feet are firmly on the floor. Concentrate, breath deeply and grab the bar more than shoulder wide. Bring it slowly down till it briefly touches your chest at the height of your nipples. Push the bar up. If you train with a high weight it is advisable to have a spotter that can help you up if you can't lift the weight on your own. With the width of the grip you can also control which part of the chest is trained more: wide grip: outer chest muscles narrow grip: inner chest muscles and triceps",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell",
+      "bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1361",
+    "source_name": "wger",
+    "name": "Double Kettlebell Front Squat",
+    "description": "The kettlebell front squat is a compound, multi-joint exercise that works several muscle groups.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "calves",
+      "abs"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "331",
+    "source_name": "wger",
+    "name": "Kettlebell Swings",
+    "description": "Hold the kettlebell securely in both hands. Keep your back flat throughout the move, avoiding any rounding of the spine.Keeping your knees \"soft\", hinge your hips backwards, letting the kettlebell swing between your knees. You want to bend from the hips as far as you can without letting your back round forwards . Then, snap your hips forwards quickly and standing up straight, locking your body in an upright posture. The speed you do this will cause your arms and the kettlebell to swing up in front of you. Don't try to lift the kettlebell with your arms. The snapping forwards of your hips will cause the kettlebell to swing forwards through momentum. Depending on the weight of the kettlebell and the speed of your hip movement, your arms will swing up to about shoulder height. At the top of this swing, let your hips hinge backwards again as the kettlebell swings back down to between your legs and the start of the next repetition.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1823",
+    "source_name": "wger",
+    "name": "Clamshell",
+    "description": "Position Side plank with the elbow and the forearm on the ground and the legs slightly bent. Execution Lift your upper knee while keeping your feet close together, like a \u201cshell opening,\u201d then slowly return to the starting position. Keep your core stable and your hips aligned.",
+    "primary_muscles": [
+      "glutes",
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1556",
+    "source_name": "wger",
+    "name": "Devil\u2019s Press",
+    "description": "The Devil\u2019s Press is a hybrid movement combining a dumbbell burpee and a double dumbbell snatch. It\u2019s a full-body, high-intensity exercise that develops strength, power, and metabolic conditioning. Start with a dumbbell in each hand and perform a burpee, letting your chest touch the ground while holding the dumbbells. Explosively jump your feet forward and swing the dumbbells between your legs. Drive the dumbbells overhead in one continuous motion, locking out your arms. Lower the dumbbells with control to return to the starting position and repeat",
+    "primary_muscles": [
+      "shoulders",
+      "glutes",
+      "chest"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "lats",
+      "obliquus_externus_abdominis",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1516",
+    "source_name": "wger",
+    "name": "Handstand",
+    "description": "Handstand free standing by pressing arms into the ground and contracting core and glutes",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "76",
+    "source_name": "wger",
+    "name": "Bench Press Narrow Grip",
+    "description": "Lay down on a bench, the bar is directly over your eyes, the knees form a slight angle and the feet are firmly on the ground. Hold the bar with a narrow grip (around 20cm.). Lead the weight slowly down till the arms are parallel to the floor (elbow: right angle), press then the bar up. When bringing the bar down, don't let it down on your nipples as with the regular bench pressing, but somewhat lower.",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "chest"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell",
+      "bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1243",
+    "source_name": "wger",
+    "name": "Double Leg Calf Raise",
+    "description": "The double leg heel raise is important to strengthen and create control and stability around the ankle and knee, and provide balance and control for the hip and pelvis.",
+    "primary_muscles": [
+      "calves",
+      "soleus"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort",
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "364",
+    "source_name": "wger",
+    "name": "Leg Curl",
+    "description": "The leg curl, also known as the hamstring curl, is an isolation exercise that targets the hamstring muscles. The exercise involves flexing the lower leg against resistance towards the buttocks. Other exercises that can be used to strengthen the hamstrings are the glute-ham raise and the deadlift.",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "167",
+    "source_name": "wger",
+    "name": "Crunches",
+    "description": "Lay down on your back a soft surface, the feet are on the floor. Ask a partner or use some other help (barbell, etc.) to keep them fixed, your hands are behind your head. From this position move your upper body up till your head or elbows touch your knees. Do this movement by rolling up your back.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "serratus_anterior"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "gym_mat"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1481",
+    "source_name": "wger",
+    "name": "Drag Pushdown",
+    "description": "Starting position for this rope pushdown is standing facing a cable machine with the handles of a rope attachment in both hands and feet shoulder width apart. Hinge forward slightly at the hips maintaining an upright chest and bring the shoulders and elbows behind the body so that when you push down on the cable attachments, you can get a fully contracted triceps long head. Drag the cable machine rope attachment as close to the body as possible and straighten your elbows until lockout.",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "sz_bar"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "282",
+    "source_name": "wger",
+    "name": "Handstand Pushup",
+    "description": "The handstand push-up (press-up) - also called the vertical push-up (press-up) or the inverted push-up (press-up) also called commandos- is a type of push-up exercise where the body is positioned in a handstand. For a true handstand, the exercise is performed free-standing, held in the air. To prepare the strength until one has built adequate balance, the feet are often placed against a wall, held by a partner, or secured in some other way from falling. Handstand pushups require significant strength, as well as balance and control if performed free-standing.",
+    "primary_muscles": [
+      "trapezius",
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "81",
+    "source_name": "wger",
+    "name": "Bent Over Dumbbell Rows",
+    "description": "With dumbbells in hand, bend at the hip until hands hang just below the knees (similar to straight-legged-deadlift starting position). Keep upper body angle constant while contracting your lats to pull you ellbows back pinching the shoulder blades at the top. Try not to stand up with every rep, check hands go below knees on every rep.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "bench",
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1201",
+    "source_name": "wger",
+    "name": "Dragon squat",
+    "description": "Start standing with your feet hip-width apart. Cross your right foot behind you to the left corner and back of the room while bending both knees. Return and repeat, alternating sides. Keep your hips and shoulders forward as you cross your feet and bend your knees.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "calves",
+      "glutes"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1750",
+    "source_name": "wger",
+    "name": "Romanian Deadlift",
+    "description": "This exercise involves holding a dumbbell in each hand and bending forward at the hips while keeping the back straight, then returning to a standing position. It primarily targets the hamstrings and glutes.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [
+      "hamstrings"
+    ],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "174",
+    "source_name": "wger",
+    "name": "Crunches With Legs Up",
+    "description": "On your back, legs extended straight up, reach toward your toes with your hands and lift your shoulder blades off the ground and back.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [
+      "obliquus_externus_abdominis"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1676",
+    "source_name": "wger",
+    "name": "Dumbbell Bench Press",
+    "description": "Lie on a flat bench and press dumbbells upward until arms are fully extended, then lower them slowly.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "289",
+    "source_name": "wger",
+    "name": "High Pull",
+    "description": "Use a light barbell, perform explosive lift up starting from underneath knee cap level. Lift/raise explosively using hips, at shoulder level. Tempo: 2111",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "glutes"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "83",
+    "source_name": "wger",
+    "name": "Bent Over Rowing",
+    "description": "Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position. Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause. Then inhale and slowly lower the barbell back to the starting position. Repeat for the recommended amount of repetitions.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1640",
+    "source_name": "wger",
+    "name": "Dumbbell Front Squat",
+    "description": "This exercise involves holding a dumbbell in each hand at shoulder height and performing a squat. It targets the lower body muscles, including the quads, hamstrings, and glutes, while also engaging the core and upper body.",
+    "primary_muscles": [
+      "glutes",
+      "quads"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "abs"
+    ],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1211",
+    "source_name": "wger",
+    "name": "Romanian deadlift, single leg",
+    "description": "Also known as: RDL. Steps:",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "dumbbell",
+      "kettlebell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "advanced",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "177",
+    "source_name": "wger",
+    "name": "Cycling",
+    "description": "Cycling, also called bicycling or biking, is the use of bicycles for transport, recreation, exercise or sport. People engaged in cycling are referred to as cyclists, bicyclists, or bikers. Apart from two-wheeled bicycles, cycling also includes the riding of unicycles, tricycles, quadracycles, recumbent and similar human-powered vehicles.",
+    "primary_muscles": [
+      "obliquus_externus_abdominis",
+      "trapezius"
+    ],
+    "secondary_muscles": [
+      "hamstrings",
+      "brachialis",
+      "glutes",
+      "lats",
+      "quads"
+    ],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "beginner",
+    "impact_level": "low",
+    "contraindication_tags": [],
+    "is_custom": false
+  },
+  {
+    "source_id": "1278",
+    "source_name": "wger",
+    "name": "Dumbbell Chest Press",
+    "description": "The dumbbell chest press is a pressing exercise similar to the barbell bench press, except that it is performed with dumbbells.",
+    "primary_muscles": [
+      "chest"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1441",
+    "source_name": "wger",
+    "name": "Incline OHP DB",
+    "description": "Sit on a bench with 45\u00b0 incline Ellbows 45\u00b0 out Move dumbbells down until upper arms are parallel to shoulders Move dumbbells up, meeting overhead",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "triceps"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "84",
+    "source_name": "wger",
+    "name": "Bent Over Rowing Reverse",
+    "description": "The same as regular rowing, but holding a reversed grip (your palms pointing forwards): Grab the barbell with a wide grIp (slightly more than shoulder wide) and lean forward. Your upper body is not quite parallel to the floor, but forms a slight angle. The chest's out during the whole exercise. Pull now the barbell with a fast movement towards your belly button, not further up. Go slowly down to the initial position. Don't swing with your body and keep your arms next to your body.",
+    "primary_muscles": [
+      "lats"
+    ],
+    "secondary_muscles": [
+      "shoulders",
+      "biceps"
+    ],
+    "movement_pattern": "horizontal_pull",
+    "equipment_tags": [
+      "barbell"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "203",
+    "source_name": "wger",
+    "name": "Dumbbell Goblet Squat",
+    "description": "Grasp dumbbell with both hands at the sides of the upper plates. Hold dumbbell in front of chest, close to torso. Place feet about shoulderwide apart, keep knees slightly bent. Squat down until thighs are parallel to floor. Keep back straight, bend and move hips backward to keep knees above feet. Return, keep knees slightly flexed. Repeat. Keep bodyweight on heels and look ahead or slightly above to keep back straight.",
+    "primary_muscles": [
+      "quads"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "squat",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "knee_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1845",
+    "source_name": "wger",
+    "name": "Seated Pancake Good Morning",
+    "description": "Sit with your legs completely straight (knees locked), spread wide in a straddle position. Place your hands on the back of your neck. Hinge your torso and head towards the floor.",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "hinge",
+    "equipment_tags": [
+      "bodyweight"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "medium",
+    "contraindication_tags": [
+      "lower_back_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1889",
+    "source_name": "wger",
+    "name": "Decline Bench Leg Raise",
+    "description": "Setup : Lie on a decline bench with your head at the top and grip the handles. The Start : Extend legs fully, keeping them slightly elevated to engage your core. The Lift : Raise your legs toward the ceiling using your abs, not momentum. The Squeeze : Pause and contract your lower abdominals at the top. The Return : Lower your legs slowly to the starting position with control.",
+    "primary_muscles": [
+      "abs"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "core",
+    "equipment_tags": [
+      "incline_bench"
+    ],
+    "environment_tags": [
+      "gym"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1228",
+    "source_name": "wger",
+    "name": "Dumbbell close grip bench press",
+    "description": "Lie down with your back on a flat bench. Hold a dumbbell in each hand. Raise your arms towards the ceiling with your palms facing each other and dumbbells pressed together. Slowly lower the dumbbells to your chest, then slowly push them back. Repeat the exercise.",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "secondary_muscles": [],
+    "movement_pattern": "horizontal_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  },
+  {
+    "source_id": "1442",
+    "source_name": "wger",
+    "name": "Kreis Press DB",
+    "description": "Sit on a bench with 45\u00b0 incline Hold dumbbells overhead Move dumbbells down as if doing overhead press Rotate dumbbells palms facing up and extend your arms in front of your body Move hands together until dumbbells meet, keep arms extended Reverse the motion until dumbbells are overhead again This is one repetition",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "secondary_muscles": [
+      "biceps",
+      "chest",
+      "abs",
+      "triceps"
+    ],
+    "movement_pattern": "vertical_push",
+    "equipment_tags": [
+      "dumbbell"
+    ],
+    "environment_tags": [
+      "both"
+    ],
+    "difficulty": "intermediate",
+    "impact_level": "low",
+    "contraindication_tags": [
+      "shoulder_discomfort"
+    ],
+    "is_custom": false
+  }
+]

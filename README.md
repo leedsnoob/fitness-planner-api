@@ -13,12 +13,13 @@ Constraint-aware fitness planning API for generating weekly workout plans and re
 
 ## Current Project Status
 
-The project is implemented through Phase 4.
+The project is implemented through Phase 5.
 
 - Phase 1: repository setup, local PostgreSQL, authentication, user profile
 - Phase 2: public exercise data evaluation, cleaning, enrichment, and seed import
 - Phase 3: exercise listing, filtering, and custom exercise CRUD
 - Phase 4: rule-based weekly plan generation with persisted plans, sessions, and session exercises
+- Phase 5: single-exercise adjustment requests with revision history and before/after plan snapshots
 
 ## Current Tables
 
@@ -28,6 +29,8 @@ The project is implemented through Phase 4.
 - `training_plans`
 - `workout_sessions`
 - `workout_session_exercises`
+- `adjustment_requests`
+- `plan_revisions`
 
 ## Local Setup
 
@@ -75,6 +78,9 @@ The final submission version will also include an exported API documentation PDF
 - `GET /plans`
 - `GET /plans/{id}`
 - `DELETE /plans/{id}`
+- `POST /plans/{id}/adjustments`
+- `GET /plans/{id}/revisions`
+- `GET /plans/{id}/revisions/{revision_number}`
 
 ## Data Workflow
 

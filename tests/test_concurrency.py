@@ -179,6 +179,19 @@ def _generate_plan(token: str) -> tuple[int, dict]:
         return response.status_code, response.json()
 
 
+def _adjust_plan(plan_id: int, session_exercise_id: int, token: str, reason: str) -> tuple[int, dict]:
+    with TestClient(create_app()) as client:
+        response = client.post(
+            f"/plans/{plan_id}/adjustments",
+            headers={"Authorization": f"Bearer {token}"},
+            json={
+                "session_exercise_id": session_exercise_id,
+                "reason": reason,
+            },
+        )
+        return response.status_code, response.json()
+
+
 def test_parallel_plan_generation_supports_multiple_users(db_client) -> None:
     _seed_planner_exercises()
     token_one = _register_user(db_client, "parallel-one@example.com")
@@ -200,3 +213,42 @@ def test_parallel_plan_generation_supports_multiple_users(db_client) -> None:
     assert plans_two.status_code == 200
     assert plans_one.json()["total"] == 1
     assert plans_two.json()["total"] == 1
+
+
+def test_parallel_adjustments_on_same_plan_are_serialized(db_client) -> None:
+    _seed_planner_exercises()
+    token = _register_user(db_client, "parallel-adjust@example.com")
+    _update_profile(db_client, token)
+    status_code, plan_payload = _generate_plan(token)
+
+    assert status_code == 201
+    target_entry = next(
+        exercise
+        for session in plan_payload["sessions"]
+        for exercise in session["exercises"]
+        if exercise["slot_type"] == "main_push"
+    )
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        results = list(
+            executor.map(
+                lambda reason: _adjust_plan(plan_payload["id"], target_entry["id"], token, reason),
+                ["DISLIKE", "WANTS_VARIETY"],
+            )
+        )
+
+    assert sorted(status for status, _ in results) == [200, 200]
+
+    plan_response = db_client.get(
+        f"/plans/{plan_payload['id']}",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    revisions_response = db_client.get(
+        f"/plans/{plan_payload['id']}/revisions",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+
+    assert plan_response.status_code == 200
+    assert revisions_response.status_code == 200
+    assert plan_response.json()["current_revision_number"] == 2
+    assert revisions_response.json()["total"] == 2

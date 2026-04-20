@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     app_name: str = "Fitness Planner API"
     api_v1_prefix: str = "/api/v1"
     database_url: str = "postgresql+psycopg://tomchen@localhost:5432/fitness_planner"
-    jwt_secret_key: str = "change-this-secret"
+    jwt_secret_key: str = "change-this-secret-to-at-least-32-characters"
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
 

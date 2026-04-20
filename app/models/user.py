@@ -31,6 +31,12 @@ class User(Base):
         back_populates="user",
         cascade="all, delete-orphan",
     )
+    workout_logs = relationship(
+        "WorkoutLog",
+        back_populates="user",
+        cascade="all, delete-orphan",
+        order_by="WorkoutLog.id",
+    )
 
 
 class UserProfile(Base):

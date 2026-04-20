@@ -1,12 +1,12 @@
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from typing import Optional
 
-from sqlalchemy import DateTime, Enum as SqlEnum, Float, ForeignKey, Integer, JSON, String, Text, UniqueConstraint
+from sqlalchemy import Date, DateTime, Enum as SqlEnum, Float, ForeignKey, Integer, JSON, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.core.enums import AdjustmentReason, Environment, Goal, PlanSplit
+from app.core.enums import AdjustmentReason, Environment, Goal, PlanSplit, WorkoutCompletionStatus
 from app.db.session import Base
 
 
@@ -44,6 +44,11 @@ class TrainingPlan(Base):
         cascade="all, delete-orphan",
         order_by="PlanRevision.revision_number",
     )
+    workout_logs: Mapped[list["WorkoutLog"]] = relationship(
+        back_populates="plan",
+        cascade="all, delete-orphan",
+        order_by="WorkoutLog.id",
+    )
 
 
 class WorkoutSession(Base):
@@ -65,6 +70,11 @@ class WorkoutSession(Base):
         back_populates="session",
         cascade="all, delete-orphan",
         order_by="WorkoutSessionExercise.id",
+    )
+    workout_logs: Mapped[list["WorkoutLog"]] = relationship(
+        back_populates="session",
+        cascade="all, delete-orphan",
+        order_by="WorkoutLog.id",
     )
 
 
@@ -88,6 +98,11 @@ class WorkoutSessionExercise(Base):
 
     session: Mapped[WorkoutSession] = relationship(back_populates="exercises")
     exercise = relationship("Exercise")
+    workout_log: Mapped[Optional["WorkoutLog"]] = relationship(
+        back_populates="session_exercise",
+        uselist=False,
+        cascade="all, delete-orphan",
+    )
 
 
 class AdjustmentRequest(Base):
@@ -149,3 +164,52 @@ class PlanRevision(Base):
     adjustment_request: Mapped[AdjustmentRequest] = relationship(back_populates="revision")
     old_exercise = relationship("Exercise", foreign_keys=[old_exercise_id])
     new_exercise = relationship("Exercise", foreign_keys=[new_exercise_id])
+
+
+class WorkoutLog(Base):
+    __tablename__ = "workout_logs"
+    __table_args__ = (UniqueConstraint("session_exercise_id", name="uq_workout_log_session_exercise"),)
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    plan_id: Mapped[int] = mapped_column(ForeignKey("training_plans.id", ondelete="CASCADE"), index=True)
+    session_id: Mapped[int] = mapped_column(ForeignKey("workout_sessions.id", ondelete="CASCADE"), index=True)
+    session_exercise_id: Mapped[int] = mapped_column(
+        ForeignKey("workout_session_exercises.id", ondelete="CASCADE"),
+        index=True,
+    )
+    exercise_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("exercises.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
+    exercise_name_snapshot: Mapped[str] = mapped_column(String(255))
+    slot_type_snapshot: Mapped[str] = mapped_column(String(64))
+    movement_pattern_snapshot: Mapped[str] = mapped_column(String(64))
+    planned_sets: Mapped[int] = mapped_column(Integer)
+    planned_reps: Mapped[str] = mapped_column(String(32))
+    planned_rest_seconds: Mapped[int] = mapped_column(Integer)
+    completed_sets: Mapped[int] = mapped_column(Integer)
+    completed_reps_total: Mapped[int] = mapped_column(Integer)
+    completion_status: Mapped[WorkoutCompletionStatus] = mapped_column(
+        SqlEnum(WorkoutCompletionStatus, native_enum=False),
+        index=True,
+    )
+    effort_rating: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    note: Mapped[str] = mapped_column(Text, default="")
+    performed_on: Mapped[date] = mapped_column(Date, index=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+        onupdate=lambda: datetime.now(timezone.utc),
+    )
+
+    user = relationship("User", back_populates="workout_logs")
+    plan: Mapped[TrainingPlan] = relationship(back_populates="workout_logs")
+    session: Mapped[WorkoutSession] = relationship(back_populates="workout_logs")
+    session_exercise: Mapped[WorkoutSessionExercise] = relationship(back_populates="workout_log")
+    exercise = relationship("Exercise", passive_deletes=True)

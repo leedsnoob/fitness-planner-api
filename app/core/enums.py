@@ -54,3 +54,9 @@ class AdjustmentReason(str, Enum):
     TOO_DIFFICULT = "TOO_DIFFICULT"
     ENVIRONMENT_MISMATCH = "ENVIRONMENT_MISMATCH"
     WANTS_VARIETY = "WANTS_VARIETY"
+
+
+class WorkoutCompletionStatus(str, Enum):
+    COMPLETED = "COMPLETED"
+    PARTIAL = "PARTIAL"
+    SKIPPED = "SKIPPED"

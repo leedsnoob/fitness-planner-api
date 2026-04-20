@@ -3,6 +3,7 @@ from app.models.plan import (
     AdjustmentRequest,
     PlanRevision,
     TrainingPlan,
+    WorkoutLog,
     WorkoutSession,
     WorkoutSessionExercise,
 )
@@ -15,6 +16,7 @@ __all__ = [
     "TrainingPlan",
     "User",
     "UserProfile",
+    "WorkoutLog",
     "WorkoutSession",
     "WorkoutSessionExercise",
 ]

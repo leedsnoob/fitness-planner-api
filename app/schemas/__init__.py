@@ -7,6 +7,15 @@ from app.schemas.exercise import (
     ExerciseResponse,
     UpdateCustomExerciseRequest,
 )
+from app.schemas.log import (
+    AdherenceAnalyticsResponse,
+    CreateWorkoutLogRequest,
+    ReplacementAnalyticsResponse,
+    UpdateWorkoutLogRequest,
+    VolumeAnalyticsResponse,
+    WorkoutLogListResponse,
+    WorkoutLogResponse,
+)
 from app.schemas.plan import GeneratePlanRequest, TrainingPlanDetailResponse, TrainingPlanListResponse
 from app.schemas.plan import (
     CreateAdjustmentRequest,
@@ -17,8 +26,10 @@ from app.schemas.plan import (
 from app.schemas.profile import ProfilePayload, UpdateProfileRequest, UserResponse
 
 __all__ = [
+    "AdherenceAnalyticsResponse",
     "CreateCustomExerciseRequest",
     "CreateAdjustmentRequest",
+    "CreateWorkoutLogRequest",
     "ExerciseListResponse",
     "ExerciseResponse",
     "GeneratePlanRequest",
@@ -27,11 +38,16 @@ __all__ = [
     "PlanRevisionDetailResponse",
     "PlanRevisionListResponse",
     "ProfilePayload",
+    "ReplacementAnalyticsResponse",
     "RegisterRequest",
     "TokenResponse",
     "TrainingPlanDetailResponse",
     "TrainingPlanListResponse",
     "UpdateCustomExerciseRequest",
+    "UpdateWorkoutLogRequest",
     "UpdateProfileRequest",
     "UserResponse",
+    "VolumeAnalyticsResponse",
+    "WorkoutLogListResponse",
+    "WorkoutLogResponse",
 ]

@@ -14,6 +14,10 @@ class ProfilePayload(BaseModel):
     training_level: Optional[TrainingLevel] = None
     preferred_environment: Optional[Environment] = None
     primary_goal: Optional[Goal] = None
+    training_days_per_week: Optional[int] = None
+    available_equipment: list[str] = Field(default_factory=list)
+    discomfort_tags: list[str] = Field(default_factory=list)
+    blocked_exercise_ids: list[int] = Field(default_factory=list)
 
 
 class UserResponse(BaseModel):
@@ -28,3 +32,7 @@ class UpdateProfileRequest(BaseModel):
     training_level: Optional[TrainingLevel] = None
     preferred_environment: Optional[Environment] = None
     primary_goal: Optional[Goal] = None
+    training_days_per_week: Optional[int] = Field(default=None, ge=3, le=4)
+    available_equipment: list[str] = Field(default_factory=list)
+    discomfort_tags: list[str] = Field(default_factory=list)
+    blocked_exercise_ids: list[int] = Field(default_factory=list)

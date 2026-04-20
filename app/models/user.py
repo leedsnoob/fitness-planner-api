@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Optional
 
-from sqlalchemy import DateTime, Enum as SqlEnum, ForeignKey, String
+from sqlalchemy import DateTime, Enum as SqlEnum, ForeignKey, Integer, JSON, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.enums import Environment, Goal, TrainingLevel
@@ -46,6 +46,10 @@ class UserProfile(Base):
         SqlEnum(Goal, native_enum=False),
         nullable=True,
     )
+    training_days_per_week: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    available_equipment: Mapped[list[str]] = mapped_column(JSON, default=list)
+    discomfort_tags: Mapped[list[str]] = mapped_column(JSON, default=list)
+    blocked_exercise_ids: Mapped[list[int]] = mapped_column(JSON, default=list)
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         default=lambda: datetime.now(timezone.utc),

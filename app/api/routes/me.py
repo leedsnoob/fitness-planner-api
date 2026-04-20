@@ -32,8 +32,11 @@ def update_profile(
     profile.training_level = payload.training_level
     profile.preferred_environment = payload.preferred_environment
     profile.primary_goal = payload.primary_goal
+    profile.training_days_per_week = payload.training_days_per_week
+    profile.available_equipment = payload.available_equipment
+    profile.discomfort_tags = payload.discomfort_tags
+    profile.blocked_exercise_ids = payload.blocked_exercise_ids
     db.add(profile)
     db.commit()
     db.refresh(current_user)
     return _build_user_response(current_user)
-

@@ -34,3 +34,5 @@ def reset_db_state() -> None:
     get_engine.cache_clear()
     get_session_factory.cache_clear()
 
+
+from app import models  # noqa: E402,F401

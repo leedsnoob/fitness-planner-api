@@ -13,7 +13,7 @@ Constraint-aware fitness planning API for generating weekly workout plans and re
 
 ## Current Project Status
 
-The project is implemented through Phase 6.
+The project is implemented through the advanced features iteration after Phase 6.
 
 - Phase 1: repository setup, local PostgreSQL, authentication, user profile
 - Phase 2: public exercise data evaluation, cleaning, enrichment, and seed import
@@ -21,6 +21,7 @@ The project is implemented through Phase 6.
 - Phase 4: rule-based weekly plan generation with persisted plans, sessions, and session exercises
 - Phase 5: single-exercise adjustment requests with revision history and before/after plan snapshots
 - Phase 6: workout logs with CRUD and analytics for volume, adherence, and replacements
+- Advanced features: Qwen explanation layer via SiliconFlow and context-aware reranking on top of the rule-based planner
 
 ## Current Tables
 
@@ -33,6 +34,7 @@ The project is implemented through Phase 6.
 - `adjustment_requests`
 - `plan_revisions`
 - `workout_logs`
+- `plan_explanations`
 
 ## Local Setup
 
@@ -47,6 +49,9 @@ Set environment variables:
 ```bash
 export DATABASE_URL="postgresql+psycopg://tomchen@localhost:5432/fitness_planner"
 export JWT_SECRET_KEY="replace-with-a-long-secret"
+export SILICONFLOW_API_KEY="replace-with-your-api-key"
+export SILICONFLOW_BASE_URL="https://api.siliconflow.cn/v1"
+export SILICONFLOW_MODEL="Qwen/Qwen3-8B"
 ```
 
 Run the API:
@@ -83,6 +88,10 @@ The final submission version will also include an exported API documentation PDF
 - `POST /plans/{id}/adjustments`
 - `GET /plans/{id}/revisions`
 - `GET /plans/{id}/revisions/{revision_number}`
+- `POST /plans/{id}/explain`
+- `GET /plans/{id}/explanations`
+- `POST /plans/{id}/revisions/{revision_number}/explain`
+- `GET /plans/{id}/revisions/{revision_number}/explanations`
 - `POST /workout-logs`
 - `GET /workout-logs`
 - `GET /workout-logs/{id}`

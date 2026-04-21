@@ -88,6 +88,18 @@ PYTHONPATH=. .venv/bin/python scripts/build_api_docs_pdf.py
 - GenAI appendix PDF: [docs/genai-appendix.pdf](docs/genai-appendix.pdf)
 - Presentation slides: [docs/presentation-slides-link.md](docs/presentation-slides-link.md)
 
+The technical report includes the deployed API links, security/authentication design, testing approach, deployment summary, and a formal GenAI declaration. The GenAI appendix contains representative conversation excerpts plus references to the custom enrichment skill and tagging rules kept in the repository.
+
+## Document Build Commands
+
+Regenerate the final PDF deliverables:
+
+```bash
+PYTHONPATH=. .venv/bin/python scripts/build_api_docs_pdf.py
+PYTHONPATH=. .venv/bin/python scripts/build_technical_report_pdf.py
+PYTHONPATH=. .venv/bin/python scripts/build_genai_appendix_pdf.py
+```
+
 ## Data Artifacts
 
 - `data/raw/wger_exercises_snapshot.json`: raw `wger` snapshot

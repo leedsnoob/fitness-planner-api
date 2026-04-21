@@ -1,42 +1,20 @@
 # Fitness Planner API
 
-Constraint-aware fitness planning API for generating weekly workout plans and revising them around equipment limits, discomfort, difficulty, and user preferences.
+Constraint-aware fitness planning API built with FastAPI and PostgreSQL. The system imports curated public exercise data, generates weekly plans, revises individual exercises when constraints change, records workout logs, exposes analytics, and can generate user-facing plan explanations through SiliconFlow + Qwen.
 
-## Current Stack
+## Stack
 
 - FastAPI
 - PostgreSQL
 - SQLAlchemy 2
-- Pydantic Settings
+- Alembic
 - JWT authentication
 - pytest
+- SiliconFlow Chat Completions for explanation generation
 
-## Current Project Status
+## Quick Start
 
-The project is implemented through the advanced features iteration after Phase 6.
-
-- Phase 1: repository setup, local PostgreSQL, authentication, user profile
-- Phase 2: public exercise data evaluation, cleaning, enrichment, and seed import
-- Phase 3: exercise listing, filtering, and custom exercise CRUD
-- Phase 4: rule-based weekly plan generation with persisted plans, sessions, and session exercises
-- Phase 5: single-exercise adjustment requests with revision history and before/after plan snapshots
-- Phase 6: workout logs with CRUD and analytics for volume, adherence, and replacements
-- Advanced features: Qwen explanation layer via SiliconFlow and context-aware reranking on top of the rule-based planner
-
-## Current Tables
-
-- `users`
-- `user_profiles`
-- `exercises`
-- `training_plans`
-- `workout_sessions`
-- `workout_session_exercises`
-- `adjustment_requests`
-- `plan_revisions`
-- `workout_logs`
-- `plan_explanations`
-
-## Local Setup
+Create and activate a virtual environment, then install dependencies:
 
 ```bash
 python3 -m venv .venv
@@ -44,90 +22,69 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-Set environment variables:
+Copy `.env.example` to `.env` and fill the required values:
 
 ```bash
-export DATABASE_URL="postgresql+psycopg://tomchen@localhost:5432/fitness_planner"
-export JWT_SECRET_KEY="replace-with-a-long-secret"
-export SILICONFLOW_API_KEY="replace-with-your-api-key"
-export SILICONFLOW_BASE_URL="https://api.siliconflow.cn/v1"
-export SILICONFLOW_MODEL="Qwen/Qwen3-8B"
+cp .env.example .env
 ```
 
-Run the API:
+Apply database migrations:
+
+```bash
+PYTHONPATH=. .venv/bin/alembic upgrade head
+```
+
+Import the cleaned exercise seed:
+
+```bash
+PYTHONPATH=. .venv/bin/python scripts/import_exercise_seed.py
+```
+
+Run the API locally:
 
 ```bash
 PYTHONPATH=. .venv/bin/uvicorn app.main:app --reload
 ```
 
+## Environment Variables
+
+The project reads configuration from `.env`.
+
+- `DATABASE_URL`
+- `JWT_SECRET_KEY`
+- `SILICONFLOW_API_KEY`
+- `SILICONFLOW_BASE_URL`
+- `SILICONFLOW_MODEL`
+
+See [.env.example](.env.example) for the full template.
+
 ## API Documentation
 
-FastAPI generates the live API documentation automatically:
+FastAPI exposes live API documentation while the service is running:
 
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 - OpenAPI JSON: `http://127.0.0.1:8000/openapi.json`
 
-The final submission version will also include an exported API documentation PDF referenced from this README.
+The final submission version will include an exported API documentation PDF referenced from this README.
 
-## Current Endpoint Groups
-
-- `POST /auth/register`
-- `POST /auth/login`
-- `GET /me/profile`
-- `PUT /me/profile`
-- `GET /exercises`
-- `GET /exercises/{id}`
-- `POST /me/custom-exercises`
-- `PATCH /me/custom-exercises/{id}`
-- `DELETE /me/custom-exercises/{id}`
-- `POST /plans/generate`
-- `GET /plans`
-- `GET /plans/{id}`
-- `DELETE /plans/{id}`
-- `POST /plans/{id}/adjustments`
-- `GET /plans/{id}/revisions`
-- `GET /plans/{id}/revisions/{revision_number}`
-- `POST /plans/{id}/explain`
-- `GET /plans/{id}/explanations`
-- `POST /plans/{id}/revisions/{revision_number}/explain`
-- `GET /plans/{id}/revisions/{revision_number}/explanations`
-- `POST /workout-logs`
-- `GET /workout-logs`
-- `GET /workout-logs/{id}`
-- `PATCH /workout-logs/{id}`
-- `DELETE /workout-logs/{id}`
-- `GET /analytics/volume`
-- `GET /analytics/adherence`
-- `GET /analytics/replacements`
-
-## Data Workflow
-
-Fetch, clean, and import exercise seed data:
-
-```bash
-PYTHONPATH=. .venv/bin/python scripts/fetch_wger_snapshot.py
-PYTHONPATH=. .venv/bin/python scripts/build_exercise_seed.py --target-size 140
-PYTHONPATH=. .venv/bin/python scripts/import_exercise_seed.py
-```
-
-## Current Data Artifacts
+## Data Artifacts
 
 - `data/raw/wger_exercises_snapshot.json`: raw `wger` snapshot
-- `data/seeds/exercises_cleaned.json`: cleaned and enriched seed dataset
+- `data/seeds/exercises_cleaned.json`: cleaned and enriched exercise seed
 - `skills/exercise-constraint-enricher/`: AI-assisted enrichment workflow artifact
 
 ## Tests
 
-Run the current automated test suite:
+Run the full automated test suite:
 
 ```bash
 PYTHONPATH=. .venv/bin/pytest -q
 ```
 
-The test setup provisions an isolated PostgreSQL database per pytest process / worker, so local concurrent test runs do not fight over the same schema state.
+The test harness provisions an isolated PostgreSQL database per pytest worker/process.
 
-## Supporting Documentation
+## Supporting Project Notes
 
 - [Dataset Evaluation](docs/dataset-evaluation.md)
 - [Data Design](docs/data-design.md)

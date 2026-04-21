@@ -3,6 +3,7 @@ from __future__ import annotations
 from functools import lru_cache
 from typing import Optional
 
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -27,6 +28,20 @@ class Settings(BaseSettings):
         env_file_encoding="utf-8",
         extra="ignore",
     )
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def normalize_database_url(cls, value: object) -> object:
+        if not isinstance(value, str):
+            return value
+
+        if value.startswith("postgres://"):
+            return "postgresql+psycopg://" + value[len("postgres://") :]
+
+        if value.startswith("postgresql://") and not value.startswith("postgresql+psycopg://"):
+            return "postgresql+psycopg://" + value[len("postgresql://") :]
+
+        return value
 
 
 @lru_cache(maxsize=1)

@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.exceptions import RequestValidationError
 
 from app.api.routes.analytics import router as analytics_router
 from app.api.routes.auth import router as auth_router
@@ -8,6 +9,7 @@ from app.api.routes.me import router as me_router
 from app.api.routes.plans import router as plans_router
 from app.api.routes.workout_logs import router as workout_logs_router
 from app.core.config import get_settings
+from app.core.errors import APIError, api_error_handler, http_exception_handler, request_validation_exception_handler
 from app.db.session import get_session_factory
 
 
@@ -15,6 +17,9 @@ def create_app() -> FastAPI:
     settings = get_settings()
     app = FastAPI(title=settings.app_name)
     app.state.session_factory = get_session_factory()
+    app.add_exception_handler(APIError, api_error_handler)
+    app.add_exception_handler(HTTPException, http_exception_handler)
+    app.add_exception_handler(RequestValidationError, request_validation_exception_handler)
 
     @app.get("/health")
     def health() -> dict[str, str]:

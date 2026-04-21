@@ -16,7 +16,11 @@ class Settings(BaseSettings):
     access_token_expire_minutes: int = 60
     siliconflow_api_key: Optional[str] = None
     siliconflow_base_url: str = "https://api.siliconflow.cn/v1"
-    siliconflow_model: str = "Qwen/Qwen3-8B"
+    siliconflow_model: str = "Qwen/Qwen3.6-35B-A3B"
+    siliconflow_connect_timeout_seconds: float = 5.0
+    siliconflow_read_timeout_seconds: float = 20.0
+    siliconflow_max_retries: int = 2
+    siliconflow_retry_backoff_seconds: float = 0.5
 
     model_config = SettingsConfigDict(
         env_file=".env",

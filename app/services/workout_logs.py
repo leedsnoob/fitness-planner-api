@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.core.enums import WorkoutCompletionStatus
@@ -58,21 +58,31 @@ def get_owned_workout_log(db: Session, user_id: int, log_id: int) -> WorkoutLog 
 
 
 def list_owned_workout_logs(db: Session, user_id: int, filters: WorkoutLogFilters) -> tuple[list[WorkoutLog], int]:
-    statement = _workout_log_query().where(WorkoutLog.user_id == user_id)
+    base_filters = [WorkoutLog.user_id == user_id]
     if filters.plan_id is not None:
-        statement = statement.where(WorkoutLog.plan_id == filters.plan_id)
+        base_filters.append(WorkoutLog.plan_id == filters.plan_id)
     if filters.session_id is not None:
-        statement = statement.where(WorkoutLog.session_id == filters.session_id)
+        base_filters.append(WorkoutLog.session_id == filters.session_id)
     if filters.performed_from is not None:
-        statement = statement.where(WorkoutLog.performed_on >= filters.performed_from)
+        base_filters.append(WorkoutLog.performed_on >= filters.performed_from)
     if filters.performed_to is not None:
-        statement = statement.where(WorkoutLog.performed_on <= filters.performed_to)
+        base_filters.append(WorkoutLog.performed_on <= filters.performed_to)
     if filters.completion_status is not None:
-        statement = statement.where(WorkoutLog.completion_status == filters.completion_status)
+        base_filters.append(WorkoutLog.completion_status == filters.completion_status)
 
-    logs = db.execute(statement).scalars().all()
-    total = len(logs)
-    items = logs[filters.offset : filters.offset + filters.limit]
+    total = db.scalar(
+        select(func.count()).select_from(WorkoutLog).where(*base_filters)
+    ) or 0
+    items = (
+        db.execute(
+            _workout_log_query()
+            .where(*base_filters)
+            .offset(filters.offset)
+            .limit(filters.limit)
+        )
+        .scalars()
+        .all()
+    )
     return items, total
 
 

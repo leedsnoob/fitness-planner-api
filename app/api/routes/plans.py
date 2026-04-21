@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, status
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
 from app.api.deps import get_current_user
+from app.core.errors import APIError
 from app.db.session import get_db_session
 from app.models.plan import PlanRevision, TrainingPlan, WorkoutSession, WorkoutSessionExercise
 from app.models.user import User
@@ -118,9 +119,19 @@ def list_plans(
     db: Session = Depends(get_db_session),
     current_user: User = Depends(get_current_user),
 ) -> TrainingPlanListResponse:
-    plans = db.execute(_plan_query().where(TrainingPlan.user_id == current_user.id)).scalars().all()
-    total = len(plans)
-    items = plans[offset : offset + limit]
+    total = db.scalar(
+        select(func.count()).select_from(TrainingPlan).where(TrainingPlan.user_id == current_user.id)
+    ) or 0
+    items = (
+        db.execute(
+            _plan_query()
+            .where(TrainingPlan.user_id == current_user.id)
+            .offset(offset)
+            .limit(limit)
+        )
+        .scalars()
+        .all()
+    )
     return TrainingPlanListResponse(
         items=[build_plan_summary(plan) for plan in items],
         total=total,
@@ -214,10 +225,12 @@ def get_plan_revision(
 
 
 def _raise_for_plan_explanation_error(exc: PlanExplanationError) -> None:
-    detail = str(exc)
-    if "configured" in detail.lower():
-        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=detail) from exc
-    raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=detail) from exc
+    raise APIError(
+        status_code=exc.status_code,
+        code=exc.code,
+        message=exc.message,
+        details=exc.details,
+    ) from exc
 
 
 @router.post("/{plan_id}/explain", response_model=PlanExplanationResponse, status_code=status.HTTP_201_CREATED)

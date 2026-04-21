@@ -164,8 +164,8 @@ def _seed_planner_exercises() -> None:
     )
 
 
-def _generate_plan(token: str) -> tuple[int, dict]:
-    with TestClient(create_app()) as client:
+def _generate_plan(app, token: str) -> tuple[int, dict]:
+    with TestClient(app) as client:
         response = client.post(
             "/plans/generate",
             headers={"Authorization": f"Bearer {token}"},
@@ -179,8 +179,8 @@ def _generate_plan(token: str) -> tuple[int, dict]:
         return response.status_code, response.json()
 
 
-def _adjust_plan(plan_id: int, session_exercise_id: int, token: str, reason: str) -> tuple[int, dict]:
-    with TestClient(create_app()) as client:
+def _adjust_plan(app, plan_id: int, session_exercise_id: int, token: str, reason: str) -> tuple[int, dict]:
+    with TestClient(app) as client:
         response = client.post(
             f"/plans/{plan_id}/adjustments",
             headers={"Authorization": f"Bearer {token}"},
@@ -194,13 +194,14 @@ def _adjust_plan(plan_id: int, session_exercise_id: int, token: str, reason: str
 
 def test_parallel_plan_generation_supports_multiple_users(db_client) -> None:
     _seed_planner_exercises()
+    app = create_app()
     token_one = _register_user(db_client, "parallel-one@example.com")
     token_two = _register_user(db_client, "parallel-two@example.com")
     _update_profile(db_client, token_one)
     _update_profile(db_client, token_two)
 
     with ThreadPoolExecutor(max_workers=2) as executor:
-        results = list(executor.map(_generate_plan, [token_one, token_two]))
+        results = list(executor.map(lambda token: _generate_plan(app, token), [token_one, token_two]))
 
     assert [status for status, _ in results] == [201, 201]
     plan_ids = [payload["id"] for _, payload in results]
@@ -217,9 +218,10 @@ def test_parallel_plan_generation_supports_multiple_users(db_client) -> None:
 
 def test_parallel_adjustments_on_same_plan_are_serialized(db_client) -> None:
     _seed_planner_exercises()
+    app = create_app()
     token = _register_user(db_client, "parallel-adjust@example.com")
     _update_profile(db_client, token)
-    status_code, plan_payload = _generate_plan(token)
+    status_code, plan_payload = _generate_plan(app, token)
 
     assert status_code == 201
     target_entry = next(
@@ -232,7 +234,7 @@ def test_parallel_adjustments_on_same_plan_are_serialized(db_client) -> None:
     with ThreadPoolExecutor(max_workers=2) as executor:
         results = list(
             executor.map(
-                lambda reason: _adjust_plan(plan_payload["id"], target_entry["id"], token, reason),
+                lambda reason: _adjust_plan(app, plan_payload["id"], target_entry["id"], token, reason),
                 ["DISLIKE", "WANTS_VARIETY"],
             )
         )

@@ -55,6 +55,8 @@ The project reads configuration from `.env`.
 - `SILICONFLOW_API_KEY`
 - `SILICONFLOW_BASE_URL`
 - `SILICONFLOW_MODEL`
+- `SILICONFLOW_CONNECT_TIMEOUT_SECONDS`
+- `SILICONFLOW_READ_TIMEOUT_SECONDS`
 
 See [.env.example](.env.example) for the full template.
 
@@ -65,8 +67,25 @@ FastAPI exposes live API documentation while the service is running:
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 - OpenAPI JSON: `http://127.0.0.1:8000/openapi.json`
+- Production Swagger UI: `https://fitness-planner-api-qrnh.onrender.com/docs`
+- Submission PDF: [API Documentation PDF](docs/api-documentation.pdf)
 
-The final submission version will include an exported API documentation PDF referenced from this README.
+Regenerate the submission PDF:
+
+```bash
+PYTHONPATH=. .venv/bin/python scripts/build_api_docs_pdf.py
+```
+
+## Deployment
+
+- Production API: `https://fitness-planner-api-qrnh.onrender.com`
+- Health check: `https://fitness-planner-api-qrnh.onrender.com/health`
+
+## Submission Artifacts
+
+- API documentation PDF: [docs/api-documentation.pdf](docs/api-documentation.pdf)
+- Technical report PDF: [docs/technical-report.pdf](docs/technical-report.pdf)
+- Presentation slides: [docs/presentation-slides-link.md](docs/presentation-slides-link.md)
 
 ## Data Artifacts
 

@@ -5,8 +5,10 @@ import argparse
 import json
 from pathlib import Path
 
+from sqlalchemy import inspect
+
 from app.data.exercise_import import import_exercises
-from app.db.session import Base, get_engine
+from app.db.session import get_engine
 
 
 def main() -> None:
@@ -20,7 +22,12 @@ def main() -> None:
 
     input_path = Path(args.input)
     records = json.loads(input_path.read_text(encoding="utf-8"))
-    Base.metadata.create_all(bind=get_engine())
+    engine = get_engine()
+    inspector = inspect(engine)
+    if not inspector.has_table("exercises"):
+        raise SystemExit(
+            "Database schema is not initialized. Run `alembic upgrade head` before importing the seed."
+        )
     result = import_exercises(records)
     print(
         f"Imported exercises from {input_path}: "

@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     siliconflow_base_url: str = "https://api.siliconflow.cn/v1"
     siliconflow_model: str = "Qwen/Qwen3.6-35B-A3B"
     siliconflow_connect_timeout_seconds: float = 5.0
-    siliconflow_read_timeout_seconds: float = 20.0
+    siliconflow_read_timeout_seconds: float = 60.0
     siliconflow_max_retries: int = 2
     siliconflow_retry_backoff_seconds: float = 0.5
 

@@ -60,3 +60,8 @@ class WorkoutCompletionStatus(str, Enum):
     COMPLETED = "COMPLETED"
     PARTIAL = "PARTIAL"
     SKIPPED = "SKIPPED"
+
+
+class ExplanationScope(str, Enum):
+    PLAN = "PLAN"
+    REVISION = "REVISION"

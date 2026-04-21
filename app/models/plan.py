@@ -6,7 +6,7 @@ from typing import Optional
 from sqlalchemy import Date, DateTime, Enum as SqlEnum, Float, ForeignKey, Integer, JSON, String, Text, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.core.enums import AdjustmentReason, Environment, Goal, PlanSplit, WorkoutCompletionStatus
+from app.core.enums import AdjustmentReason, Environment, ExplanationScope, Goal, PlanSplit, WorkoutCompletionStatus
 from app.db.session import Base
 
 
@@ -48,6 +48,11 @@ class TrainingPlan(Base):
         back_populates="plan",
         cascade="all, delete-orphan",
         order_by="WorkoutLog.id",
+    )
+    explanations: Mapped[list["PlanExplanation"]] = relationship(
+        back_populates="plan",
+        cascade="all, delete-orphan",
+        order_by="PlanExplanation.id",
     )
 
 
@@ -164,6 +169,10 @@ class PlanRevision(Base):
     adjustment_request: Mapped[AdjustmentRequest] = relationship(back_populates="revision")
     old_exercise = relationship("Exercise", foreign_keys=[old_exercise_id])
     new_exercise = relationship("Exercise", foreign_keys=[new_exercise_id])
+    explanations: Mapped[list["PlanExplanation"]] = relationship(
+        back_populates="revision",
+        order_by="PlanExplanation.id",
+    )
 
 
 class WorkoutLog(Base):
@@ -213,3 +222,32 @@ class WorkoutLog(Base):
     session: Mapped[WorkoutSession] = relationship(back_populates="workout_logs")
     session_exercise: Mapped[WorkoutSessionExercise] = relationship(back_populates="workout_log")
     exercise = relationship("Exercise", passive_deletes=True)
+
+
+class PlanExplanation(Base):
+    __tablename__ = "plan_explanations"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), index=True)
+    plan_id: Mapped[int] = mapped_column(ForeignKey("training_plans.id", ondelete="CASCADE"), index=True)
+    revision_id: Mapped[Optional[int]] = mapped_column(
+        ForeignKey("plan_revisions.id", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
+    explanation_scope: Mapped[ExplanationScope] = mapped_column(
+        SqlEnum(ExplanationScope, native_enum=False),
+        index=True,
+    )
+    provider: Mapped[str] = mapped_column(String(64))
+    model_name: Mapped[str] = mapped_column(String(128))
+    input_snapshot: Mapped[dict] = mapped_column(JSON, default=dict)
+    output_text: Mapped[str] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+    )
+
+    user = relationship("User", back_populates="plan_explanations")
+    plan: Mapped[TrainingPlan] = relationship(back_populates="explanations")
+    revision: Mapped[Optional[PlanRevision]] = relationship(back_populates="explanations")

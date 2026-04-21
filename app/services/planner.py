@@ -10,6 +10,7 @@ from app.models.exercise import Exercise
 from app.models.plan import TrainingPlan, WorkoutSession, WorkoutSessionExercise
 from app.models.user import User
 from app.schemas.plan import GeneratePlanRequest
+from app.services.reranking import UserHistoryContext, build_user_history_context, compute_context_breakdown
 
 
 class PlanGenerationError(Exception):
@@ -304,6 +305,7 @@ def generate_plan(db: Session, current_user: User, request: GeneratePlanRequest)
         },
         status="active",
     )
+    history_context = build_user_history_context(db, current_user.id)
 
     used_exercise_ids: set[int] = set()
     for day_index, session_template in enumerate(TEMPLATES[request.split], start=1):
@@ -319,6 +321,7 @@ def generate_plan(db: Session, current_user: User, request: GeneratePlanRequest)
                 environment=request.environment,
                 profile=profile,
                 used_exercise_ids=used_exercise_ids,
+                history_context=history_context,
             )
             prescription = GOAL_PRESCRIPTIONS[request.goal][slot.prescription_type]
             session.exercises.append(
@@ -382,6 +385,7 @@ def _select_exercise(
     environment: Environment,
     profile,
     used_exercise_ids: set[int],
+    history_context: UserHistoryContext,
 ) -> tuple[Exercise, float, dict[str, float]]:
     filtered = [
         exercise
@@ -410,8 +414,18 @@ def _select_exercise(
 
     ranked: list[tuple[float, int, Exercise, dict[str, float]]] = []
     for exercise in filtered:
-        score, breakdown = _score_exercise(exercise, slot, environment, profile)
-        ranked.append((score, -exercise.id, exercise, breakdown))
+        base_score, base_breakdown = _score_exercise(exercise, slot, environment, profile)
+        context_total, context_breakdown = compute_context_breakdown(
+            exercise,
+            history=history_context,
+        )
+        total = base_score + context_total
+        breakdown = {
+            **base_breakdown,
+            **context_breakdown,
+            "total": total,
+        }
+        ranked.append((total, -exercise.id, exercise, breakdown))
     ranked.sort(reverse=True)
     best_score, _, best_exercise, best_breakdown = ranked[0]
     return best_exercise, best_score, best_breakdown

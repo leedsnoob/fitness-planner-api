@@ -20,6 +20,8 @@ from app.schemas.plan import GeneratePlanRequest, TrainingPlanDetailResponse, Tr
 from app.schemas.plan import (
     CreateAdjustmentRequest,
     PlanAdjustmentResponse,
+    PlanExplanationListResponse,
+    PlanExplanationResponse,
     PlanRevisionDetailResponse,
     PlanRevisionListResponse,
 )
@@ -35,6 +37,8 @@ __all__ = [
     "GeneratePlanRequest",
     "LoginRequest",
     "PlanAdjustmentResponse",
+    "PlanExplanationListResponse",
+    "PlanExplanationResponse",
     "PlanRevisionDetailResponse",
     "PlanRevisionListResponse",
     "ProfilePayload",

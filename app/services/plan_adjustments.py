@@ -19,6 +19,11 @@ from app.services.planner import (
     score_exercise,
 )
 from app.services.plan_views import build_plan_detail
+from app.services.reranking import (
+    RerankingRequestContext,
+    build_user_history_context,
+    compute_context_breakdown,
+)
 
 
 class PlanAdjustmentError(Exception):
@@ -53,6 +58,7 @@ def adjust_plan_exercise(
         profile=current_user.profile,
         payload=payload,
     )
+    history_context = build_user_history_context(db, current_user.id)
     candidates = load_candidate_scope(db, current_user.id)
     replacement, replacement_score, score_breakdown = _select_replacement(
         candidates=candidates,
@@ -63,6 +69,12 @@ def adjust_plan_exercise(
         environment=effective_environment,
         effective_profile=effective_profile,
         reason=payload.reason,
+        history_context=history_context,
+        request_context=RerankingRequestContext(
+            override_environment=payload.override_environment,
+            temporary_unavailable_equipment=tuple(payload.temporary_unavailable_equipment),
+            temporary_discomfort_tags=tuple(payload.temporary_discomfort_tags),
+        ),
     )
 
     adjustment_request = AdjustmentRequest(
@@ -160,6 +172,8 @@ def _select_replacement(
     environment: Environment,
     effective_profile,
     reason: AdjustmentReason,
+    history_context,
+    request_context: RerankingRequestContext,
 ) -> tuple[Exercise, float, dict[str, float]]:
     used_exercise_ids = {
         entry.exercise_id
@@ -191,14 +205,20 @@ def _select_replacement(
             environment=environment,
             profile=effective_profile,
         )
+        context_total, context_breakdown = compute_context_breakdown(
+            exercise,
+            history=history_context,
+            request_context=request_context,
+        )
         reason_bonus = _replacement_reason_bonus(
             reason=reason,
             candidate=exercise,
             current_exercise=current_exercise,
         )
-        total = base_score + reason_bonus
+        total = base_score + context_total + reason_bonus
         breakdown = {
             **base_breakdown,
+            **context_breakdown,
             "replacement_reason_bonus": reason_bonus,
             "total": total,
         }

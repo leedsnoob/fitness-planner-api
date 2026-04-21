@@ -13,14 +13,27 @@ from app.schemas.plan import (
     CreateAdjustmentRequest,
     GeneratePlanRequest,
     PlanAdjustmentResponse,
+    PlanExplanationListResponse,
+    PlanExplanationResponse,
     PlanRevisionDetailResponse,
     PlanRevisionListResponse,
-    PlanRevisionSummaryResponse,
     TrainingPlanDetailResponse,
     TrainingPlanListResponse,
 )
+from app.services.plan_explanations import (
+    PlanExplanationError,
+    create_plan_explanation,
+    create_revision_explanation,
+    list_plan_explanations,
+)
 from app.services.plan_adjustments import PlanAdjustmentError, adjust_plan_exercise
-from app.services.plan_views import build_plan_detail, build_plan_summary
+from app.services.plan_views import (
+    build_plan_detail,
+    build_plan_explanation_response,
+    build_plan_summary,
+    build_revision_detail,
+    build_revision_summary,
+)
 from app.services.planner import PlanGenerationError, generate_plan
 
 router = APIRouter(prefix="/plans", tags=["plans"])
@@ -79,28 +92,6 @@ def _get_owned_revision(db: Session, user_id: int, plan_id: int, revision_number
     if revision is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Revision not found.")
     return revision
-
-
-def _build_revision_summary(revision: PlanRevision) -> PlanRevisionSummaryResponse:
-    return PlanRevisionSummaryResponse(
-        revision_number=revision.revision_number,
-        reason=revision.adjustment_request.reason,
-        detail_note=revision.adjustment_request.detail_note,
-        old_exercise=ExerciseResponse.model_validate(revision.old_exercise),
-        new_exercise=ExerciseResponse.model_validate(revision.new_exercise),
-        created_at=revision.created_at,
-    )
-
-
-def _build_revision_detail(revision: PlanRevision) -> PlanRevisionDetailResponse:
-    summary = _build_revision_summary(revision)
-    return PlanRevisionDetailResponse(
-        **summary.model_dump(),
-        score_breakdown=revision.score_breakdown,
-        explanation=revision.explanation,
-        before_snapshot=revision.before_snapshot,
-        after_snapshot=revision.after_snapshot,
-    )
 
 
 @router.post("/generate", response_model=TrainingPlanDetailResponse, status_code=status.HTTP_201_CREATED)
@@ -206,7 +197,7 @@ def list_plan_revisions(
         .all()
     )
     return PlanRevisionListResponse(
-        items=[_build_revision_summary(revision) for revision in revisions],
+        items=[build_revision_summary(revision) for revision in revisions],
         total=len(revisions),
     )
 
@@ -219,4 +210,78 @@ def get_plan_revision(
     current_user: User = Depends(get_current_user),
 ) -> PlanRevisionDetailResponse:
     revision = _get_owned_revision(db, current_user.id, plan_id, revision_number)
-    return _build_revision_detail(revision)
+    return build_revision_detail(revision)
+
+
+def _raise_for_plan_explanation_error(exc: PlanExplanationError) -> None:
+    detail = str(exc)
+    if "configured" in detail.lower():
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=detail) from exc
+    raise HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=detail) from exc
+
+
+@router.post("/{plan_id}/explain", response_model=PlanExplanationResponse, status_code=status.HTTP_201_CREATED)
+def create_plan_explanation_entry(
+    plan_id: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanExplanationResponse:
+    plan = _get_owned_plan(db, current_user.id, plan_id)
+    try:
+        explanation = create_plan_explanation(db, current_user, plan)
+    except PlanExplanationError as exc:
+        _raise_for_plan_explanation_error(exc)
+    return build_plan_explanation_response(explanation)
+
+
+@router.get("/{plan_id}/explanations", response_model=PlanExplanationListResponse)
+def list_explanations_for_plan(
+    plan_id: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanExplanationListResponse:
+    _get_owned_plan(db, current_user.id, plan_id)
+    explanations = list_plan_explanations(db, current_user.id, plan_id=plan_id)
+    return PlanExplanationListResponse(
+        items=[build_plan_explanation_response(explanation) for explanation in explanations],
+        total=len(explanations),
+    )
+
+
+@router.post(
+    "/{plan_id}/revisions/{revision_number}/explain",
+    response_model=PlanExplanationResponse,
+    status_code=status.HTTP_201_CREATED,
+)
+def create_revision_explanation_entry(
+    plan_id: int,
+    revision_number: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanExplanationResponse:
+    plan = _get_owned_plan(db, current_user.id, plan_id)
+    revision = _get_owned_revision(db, current_user.id, plan_id, revision_number)
+    try:
+        explanation = create_revision_explanation(db, current_user, plan, revision)
+    except PlanExplanationError as exc:
+        _raise_for_plan_explanation_error(exc)
+    return build_plan_explanation_response(explanation)
+
+
+@router.get(
+    "/{plan_id}/revisions/{revision_number}/explanations",
+    response_model=PlanExplanationListResponse,
+)
+def list_explanations_for_revision(
+    plan_id: int,
+    revision_number: int,
+    db: Session = Depends(get_db_session),
+    current_user: User = Depends(get_current_user),
+) -> PlanExplanationListResponse:
+    _get_owned_plan(db, current_user.id, plan_id)
+    revision = _get_owned_revision(db, current_user.id, plan_id, revision_number)
+    explanations = list_plan_explanations(db, current_user.id, plan_id=plan_id, revision_id=revision.id)
+    return PlanExplanationListResponse(
+        items=[build_plan_explanation_response(explanation) for explanation in explanations],
+        total=len(explanations),
+    )

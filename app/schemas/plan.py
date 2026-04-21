@@ -5,7 +5,7 @@ from typing import Optional
 
 from pydantic import BaseModel, Field
 
-from app.core.enums import AdjustmentReason, Environment, Goal, PlanSplit
+from app.core.enums import AdjustmentReason, Environment, ExplanationScope, Goal, PlanSplit
 from app.schemas.exercise import ExerciseResponse
 
 
@@ -99,3 +99,21 @@ class PlanRevisionDetailResponse(PlanRevisionSummaryResponse):
     explanation: str
     before_snapshot: dict
     after_snapshot: dict
+
+
+class PlanExplanationResponse(BaseModel):
+    id: int
+    explanation_scope: ExplanationScope
+    plan_id: int
+    revision_id: Optional[int]
+    revision_number: Optional[int]
+    provider: str
+    model_name: str
+    input_snapshot: dict
+    output_text: str
+    created_at: datetime
+
+
+class PlanExplanationListResponse(BaseModel):
+    items: list[PlanExplanationResponse]
+    total: int

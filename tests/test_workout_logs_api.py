@@ -194,3 +194,36 @@ def test_workout_log_snapshot_remains_stable_after_plan_adjustment(db_client) ->
     assert log_detail.status_code == 200
     assert log_detail.json()["exercise_name_snapshot"] == original_name
     assert log_detail.json()["exercise_name_snapshot"] != updated_target["exercise"]["name"]
+
+
+def test_list_workout_logs_applies_limit_and_offset(db_client) -> None:
+    token = register_user(db_client)
+    update_profile(db_client, token)
+    seed_planner_exercises()
+    plan = generate_plan(db_client, token)
+
+    created_ids = []
+    for session in plan["sessions"]:
+        entry = session["exercises"][0]
+        response = _create_log(
+            db_client,
+            token,
+            plan_id=plan["id"],
+            session_id=session["id"],
+            session_exercise_id=entry["id"],
+        )
+        assert response.status_code == 201
+        created_ids.append(response.json()["id"])
+
+    list_response = db_client.get(
+        "/workout-logs?limit=1&offset=1",
+        headers=auth_headers(token),
+    )
+
+    assert list_response.status_code == 200
+    payload = list_response.json()
+    assert payload["total"] == 3
+    assert payload["limit"] == 1
+    assert payload["offset"] == 1
+    assert len(payload["items"]) == 1
+    assert payload["items"][0]["id"] in created_ids

@@ -249,7 +249,8 @@ def test_generate_plan_rejects_invalid_split_for_training_days(db_client) -> Non
     )
 
     assert response.status_code == 422
-    assert "upper_lower" in response.json()["detail"]
+    assert response.json()["code"] == "unprocessable_entity"
+    assert "upper_lower" in response.json()["message"]
 
 
 def test_generate_plan_respects_profile_constraints(db_client) -> None:
@@ -319,3 +320,34 @@ def test_plan_detail_is_owner_scoped_and_delete_cascades(db_client) -> None:
         headers={"Authorization": f"Bearer {owner_token}"},
     )
     assert fetch_deleted.status_code == 404
+
+
+def test_list_plans_applies_limit_and_offset(db_client) -> None:
+    token = _register_user(db_client)
+    _update_profile(db_client, token)
+    _seed_planner_exercises()
+
+    for _ in range(3):
+        response = db_client.post(
+            "/plans/generate",
+            headers={"Authorization": f"Bearer {token}"},
+            json={
+                "split": "full_body",
+                "goal": "MUSCLE_GAIN",
+                "training_days_per_week": 3,
+                "environment": "HOME",
+            },
+        )
+        assert response.status_code == 201
+
+    paged = db_client.get(
+        "/plans?limit=1&offset=1",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+
+    assert paged.status_code == 200
+    payload = paged.json()
+    assert payload["total"] == 3
+    assert payload["limit"] == 1
+    assert payload["offset"] == 1
+    assert len(payload["items"]) == 1

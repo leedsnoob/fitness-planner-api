@@ -125,7 +125,7 @@ def test_create_revision_explanation_and_enforce_owner_scope(db_client, monkeypa
 
 
 def test_plan_explanation_returns_service_error_when_provider_not_configured(db_client, monkeypatch) -> None:
-    monkeypatch.delenv("SILICONFLOW_API_KEY", raising=False)
+    monkeypatch.setenv("SILICONFLOW_API_KEY", "")
     get_settings.cache_clear()
     token = register_user(db_client)
     update_profile(db_client, token)
@@ -138,4 +138,6 @@ def test_plan_explanation_returns_service_error_when_provider_not_configured(db_
     )
 
     assert response.status_code == 503
-    assert "SILICONFLOW_API_KEY" in response.json()["detail"]
+    payload = response.json()
+    assert payload["code"] == "provider_not_configured"
+    assert payload["message"] == "SILICONFLOW_API_KEY is not configured."

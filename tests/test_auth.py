@@ -28,7 +28,8 @@ def test_register_rejects_duplicate_email(db_client) -> None:
 
     assert first_response.status_code == 201
     assert second_response.status_code == 409
-    assert second_response.json()["detail"] == "Email is already registered."
+    assert second_response.json()["code"] == "conflict"
+    assert second_response.json()["message"] == "Email is already registered."
 
 
 def test_login_returns_access_token_for_valid_credentials(db_client) -> None:
@@ -58,4 +59,5 @@ def test_login_rejects_invalid_credentials(db_client) -> None:
     )
 
     assert response.status_code == 401
-    assert response.json()["detail"] == "Invalid email or password."
+    assert response.json()["code"] == "unauthorized"
+    assert response.json()["message"] == "Invalid email or password."

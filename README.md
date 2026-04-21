@@ -85,6 +85,7 @@ PYTHONPATH=. .venv/bin/python scripts/build_api_docs_pdf.py
 
 - API documentation PDF: [docs/api-documentation.pdf](docs/api-documentation.pdf)
 - Technical report PDF: [docs/technical-report.pdf](docs/technical-report.pdf)
+- GenAI appendix PDF: [docs/genai-appendix.pdf](docs/genai-appendix.pdf)
 - Presentation slides: [docs/presentation-slides-link.md](docs/presentation-slides-link.md)
 
 ## Data Artifacts
@@ -108,3 +109,5 @@ The test harness provisions an isolated PostgreSQL database per pytest worker/pr
 - [Dataset Evaluation](docs/dataset-evaluation.md)
 - [Data Design](docs/data-design.md)
 - [GenAI Usage Log](docs/genai-usage.md)
+- [Exercise Constraint Enricher Skill](skills/exercise-constraint-enricher/SKILL.md)
+- [Tagging Rules Reference](skills/exercise-constraint-enricher/references/tagging-rules.md)

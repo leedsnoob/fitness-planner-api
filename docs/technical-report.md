@@ -5,6 +5,7 @@
 - Public GitHub repository: https://github.com/leedsnoob/fitness-planner-api
 - API documentation PDF: https://github.com/leedsnoob/fitness-planner-api/blob/main/docs/api-documentation.pdf
 - Presentation slides link: https://github.com/leedsnoob/fitness-planner-api/blob/main/docs/presentation-slides-link.md
+- GenAI appendix PDF: https://github.com/leedsnoob/fitness-planner-api/blob/main/docs/genai-appendix.pdf
 - Production API: https://fitness-planner-api-qrnh.onrender.com
 - Production Swagger UI: https://fitness-planner-api-qrnh.onrender.com/docs
 
@@ -174,6 +175,7 @@ Evidence of GenAI use is already present in the repository:
 - `docs/dataset-evaluation.md`
 - `skills/exercise-constraint-enricher/`
 - `skills/exercise-constraint-enricher/references/tagging-rules.md`
+- `docs/genai-appendix.pdf`
 
 This is high-level GenAI usage because the project uses AI to explore alternatives, shape the methodology, and create reusable workflow artifacts rather than merely asking for isolated code snippets.
 
@@ -183,4 +185,7 @@ This is high-level GenAI usage because the project uses AI to explore alternativ
 - **Enrichment workflow**: GenAI helped surface useful semantic fields such as `movement_pattern`, `difficulty`, `impact_level`, and `contraindication_tags`, but the final tagging rules were constrained into a repository skill plus explicit human review.
 - **Explanation integration**: GenAI support was used to evaluate whether explanation should directly drive planning. The final system intentionally rejected that design and kept Qwen as a non-critical explanation layer with timeout and failure isolation.
 
-Full exported conversation logs will be attached as supplementary material at submission time, as required by the assessment brief.
+Full representative conversation excerpts are provided in the supplementary appendix:
+
+- `docs/genai-appendix.pdf`
+- `docs/genai-appendix.md`
